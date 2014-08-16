@@ -3,32 +3,30 @@
 
 from os.path import dirname, join
 
-
+# Error messages
 DEBUG=True
+TEMPLATE_DEBUG = True
+
 
 # Location of app directory
 BASE_DIR = dirname(dirname(__file__))
+ROOT_URLCONF = 'app.urls'
     
 
-# App startup
-SECRET_KEY = 's!qs5!9(bhkv7#hn#172zm_*l#m)j(8lv1gj)#84p$9+^&amp;bn9e'
-
-
-# Location of router
-ROOT_URLCONF = 'app.urls'
+# Login
+LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL = '/'
 
 
 # Shim to run application from Apache
 WSGI_APPLICATION = 'app.wsgi.application'
+SECRET_KEY = 's!qs5!9(bhkv7#hn#172zm_*l#m)j(8lv1gj)#84p$9+^&amp;bn9e'
 
 
 # Static server
 STATIC_URL = '/static/'
-
 STATIC_ROOT = ''
-
 STATICFILES_DIRS = (  BASE_DIR+'/static', )
-
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -45,7 +43,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_extensions',
     'doc',
-    'task',
+#    'brain'
+#    'task',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -73,4 +72,3 @@ DATABASES = {
 }
 
 
-TEMPLATE_DEBUG = True
