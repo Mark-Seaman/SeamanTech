@@ -1,39 +1,79 @@
-<html>
-
-  <head>
+<!doctype html>
+<html ng-app="thumper">
+<head>
+    <!--
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
+        <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.4.0.js"></script>
+        <link  href="http://appthumper.com/media/thumper.css" rel="stylesheet" />
+        <script src="http://appthumper.com/media/thumper.js"></script>   
+    -->
     <link href="/static/bootstrap-combined.min.css" rel="stylesheet">
-    <link href="/static/hammer.css" rel="stylesheet">
+    <script src="/static/angular.js"></script>
+    <script src="/static/ui-bootstrap-tpls-0.4.0.js"></script>
+    <link  href="/static/thumper.css" rel="stylesheet" />
+    <script src="/static/thumper.js"></script>
   </head>
-
   <body>
+
+    {% block user %} {% endblock %}
+
+    {% block banner %}
     <div class='header'>
-      <a href="/"> <h1 style='color:blue'>Brain Server</h1> <br>Home </a>
 
-      <div style='float:right'>
-
-        {% if user.is_authenticated and user.is_staff %}
-        <div style='float:right'>
-          Logged in as,
-          <strong>{% firstof user.first_name user.username %}</strong>.
-          <!-- <a href="/password_change">Change password</a> -->
-          <a href="/logout">Log out</a>
-        </div>
+        {% if site_title %}
+        <h1>{{ site_title }}</h1>
+        {% else %}
+        <h1>Shrinking-World.Org</h1>
         {% endif %}
 
-        <p>Welcome, {{user}}</p>
-        <p><a href='/logout?next="/"'>Logout</a></p>
 
-      </div>
+        <div style='float:right'>
+          <p>
+            {% if user.is_authenticated and user.is_staff %}
+                <a class='hlink' href="/logout">Log out</a>
+                <span class='hlink'>
+                  <strong>{% firstof user.first_name user.username %}</strong>.
+                </span>
+                <!--
+                <span style='color:white'>Logged in as,
+                <a href="/password_change">Change password</a>
+                </span>
+                -->
+            {% else %}
+                <!--
+                <span style='color:white'>Not logged in</span>
+                <span style='color:white'>{{ user }}</span>
+                -->
+                <a class='hlink' href="/login">Log In</a>
+            {% endif %}
+          </p>
 
-      <hr>
+        </div>
+
+        {% block navbar %}
+        <p>
+          <span class='hlink'>
+          <a  class='hlink' href="/">Home</a>&nbsp;&nbsp;&nbsp;
+          <!--
+          {% if user.is_authenticated and user.is_staff %}
+              <a class='hlink' href='/{{ title }}/edit'>Edit</a>&nbsp;&nbsp;&nbsp;
+          {% endif %}
+          -->
+          </span>
+        </p>
+        {% endblock %}
+
     </div>
-    {% autoescape off %}
-    {% block content %}
-    
     {% endblock %}
-    {% endautoescape %}
 
+
+    <div class='page'>
+      <div style="margin:3em">
+        {% block content %} 
+        {% endblock %}
+      </div>
+    </div>
 
   </body>
-
 </html>
