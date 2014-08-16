@@ -1,0 +1,8 @@
+#!/bin/bash
+# Save the entire database as JSON
+
+cd $pa
+f=data/brain.json
+manage.py  dumpdata > $f
+
+echo "File: $f `cat $f | json-format | lc` Lines"

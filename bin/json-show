@@ -1,0 +1,5 @@
+#!/bin/bash
+# Show the stored file contents
+
+json-format < $pa/data/$1.json
+

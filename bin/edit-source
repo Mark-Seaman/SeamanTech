@@ -1,0 +1,5 @@
+#!/bin/bash
+# Edit the source code
+
+e $pa $pa/doc $pa/generate
+

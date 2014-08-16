@@ -1,0 +1,5 @@
+#!/bin/bash
+# Document the tricks for web dev
+
+e $p/doc/SRS $p/app
+

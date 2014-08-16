@@ -1,0 +1,6 @@
+#!/bin/bash
+# Compare code generator in app thumper and impact srs
+
+diff -r ~/Projects/impact/app/generate/ ~/Projects/thumper/app/generate/
+
+

@@ -1,0 +1,7 @@
+#!/bin/bash
+# List the source code for the application
+
+cd $pa/doc
+find -name '*_model.py' | grep -v 'init\|views\|urls\|tests'
+
+

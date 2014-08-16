@@ -1,0 +1,6 @@
+#!/bin/bash
+# Pull code and bounce the server
+
+svr-do 'git pull && ~/base-bin/restart-apache'
+
+

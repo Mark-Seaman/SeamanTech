@@ -1,0 +1,19 @@
+#!/bin/bash
+# Create code for a new data type
+
+module=doc
+
+cd $pa
+
+# Class definition
+e generate/data_types.py 
+
+# Application code
+e $module/$1_model.py $module/$1_query.py  
+e $module/models.py
+
+# Fake data
+e scripts/test_data.py scripts/show_data.py scripts/fake_names.py
+e $module/faker.py
+e data/faker
+

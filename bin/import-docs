@@ -1,0 +1,12 @@
+#!/bin/bash
+# Import brain and mybook docs
+
+{
+rs brain clear
+rs brain import $mybook
+rs brain import $br
+} | grep 'BAD import_doc' > $pd/rejects
+
+echo " `lc $pd/rejects` Rejected files"
+
+rs brain list

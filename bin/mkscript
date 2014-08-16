@@ -1,0 +1,17 @@
+#!/bin/bash
+# Create a django script
+
+f=$pa/scripts/$1
+
+cat <<EOF > $f
+#!/usr/bin/env python
+# $2
+
+from xxx.models import xxx
+
+print 'Run the script $1'
+ 
+EOF
+
+chmod +x $f
+e $f

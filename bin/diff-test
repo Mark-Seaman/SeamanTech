@@ -1,0 +1,10 @@
+#!/bin/bash
+# Compare code generator in app thumper and impact srs
+
+cd $pt
+for f in *.tst
+do
+    echo $f
+    diff $f ~/Projects/thumper/test/$f
+done 
+

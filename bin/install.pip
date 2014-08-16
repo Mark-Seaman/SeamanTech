@@ -1,0 +1,8 @@
+pip install djangorestframework
+pip install django-filter
+pip install markdown
+pip install nose
+pip install Django==1.6
+pip install redis
+pip install django-extensions
+pip install pillow

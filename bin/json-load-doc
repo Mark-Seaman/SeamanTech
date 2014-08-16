@@ -1,0 +1,7 @@
+#!/bin/bash
+# Load the entire database as JSON
+
+cd $pa
+manage.py  loaddata  data/brain-doc.json
+
+

@@ -1,0 +1,5 @@
+#!/bin/bash
+# Build the SQL table to match the code
+
+cd $pa && manage.py syncdb
+

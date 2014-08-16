@@ -1,0 +1,44 @@
+#!/usr/bin/env python
+# List the data for the Impact SRS
+from os.path import join
+from os import environ
+
+
+print "List the URLs needed for the Impact SRS"
+classes = open(join(environ['pd'],'classes')).read()
+
+views = { 
+    'list': '%s/',
+    'detail': '%s/42',
+    'add': '%s',
+    'edit': '%s/42/edit',
+    'delete': '%s/42/delete'
+    }
+
+
+# Print all operations for one class
+def print_class(c):
+    if len(c) > 1:
+        for v in views:
+            print "%-8s"%v,
+            print '          ', views[v] % c
+        print
+    else:
+        print c
+
+
+# Print all URL routes needed
+def url_map():
+    print 'URL map'
+    print
+    print 'Operations:  ',
+    for v in views:
+        print "%-8s"%v,
+    print
+
+    for c in classes.split('\n'):
+        c = c.strip().lower().replace(' ','')
+        print_class(c)
+
+
+url_map()

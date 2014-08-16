@@ -1,0 +1,9 @@
+#!/bin/bash
+# Execute a command remotely
+
+# Example:
+#   svr-do hostname
+#   svr-do env
+
+ssh $ph ". impact/bin/project > /dev/null && $*"
+

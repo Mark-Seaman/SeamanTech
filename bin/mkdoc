@@ -1,0 +1,50 @@
+#!/usr/bin/env python
+# Create a document
+
+from sys import argv
+from os import environ, system
+from os.path import join, exists
+
+
+# Print a nice header
+def print_head(text):
+    print ('_' * 50)
+    print '\n'+text
+    print ('_' * 50) + '\n'
+ 
+   
+# Format a page title
+def title(str):
+    word = ''
+    result = []
+    for i,c in enumerate(str):
+        word += c
+        if i+1>=len(str) or str[i+1].isupper():
+            result.append(word)
+            word = ''
+    return ' '.join(result)
+
+ 
+# Create a new doc and edit it
+def make_doc(doc):
+    f=doc
+
+    # Create file if needed
+    if exists(f):
+        print_head ('Document exists, %s' % doc)
+        print open(f).read()
+    else:
+        print_head ('Create a document, %s' % doc)
+        open(f,'w').write('* %s *                                    -*-muse-*-' %  title(doc))
+
+    # Edit the file
+    if len(argv)>2 and argv[2]!='-q':
+        system('e '+f)
+
+
+# Setup the file name
+if len(argv)>1:
+    make_doc(argv[1])
+else:
+    print 'usage: %s doc'%argv[0]
+

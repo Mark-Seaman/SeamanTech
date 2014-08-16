@@ -1,0 +1,11 @@
+#!/bin/bash
+# Updat the code generator from another project
+
+cd $p
+cptree ../$1/app/generate app/generate
+git checkout app/generate/data_types.py
+cp ../$1/bin/mk* bin
+
+git status
+git diff
+

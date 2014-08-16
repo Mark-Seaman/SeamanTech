@@ -1,0 +1,51 @@
+#!/bin/bash
+# Start working on the simple project
+
+# Vars
+export p=~/Projects/seamantech
+export ph=ubuntu@seaman-sws
+export port=8014
+export pa=$p/app
+export pb=$p/bin
+export pd=$p/doc
+export pt=$p/test
+export x=~/Projects/impact
+
+# Aliases
+alias proot="cd $p"
+alias papp="cd $pa"
+alias pbin="cd $pb"
+alias pdoc="cd $pd"
+alias ptest="cd $pt"
+alias eapp="e $pa"
+alias ebin="e $pb"
+alias edoc="e $pd"
+alias etest="e $pt"
+alias tres='tresults'
+alias s='search'
+
+# Path
+export PATH=\
+$pb:\
+$pt:\
+/usr/bin:\
+/sbin:\
+/bin:\
+~/bin:\
+.
+export _OLD_VIRTUAL_PATH=$PATH
+
+
+# Directory
+cd $p
+cat $p/bin/welcome
+
+# Use virtualenv
+[ -f $p/env/bin/activate ] && . $p/env/bin/activate
+echo "python = `which python`"
+echo 
+path
+
+# Status
+git status
+

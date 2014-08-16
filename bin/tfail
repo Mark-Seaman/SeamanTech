@@ -1,0 +1,22 @@
+#!/bin/bash
+# List the failed tests
+
+d="$1"
+[ "$1" == "" ] && d=$pt
+
+cd $d
+{
+    
+    files=`ls $d/*.tst`
+    #echo "Tests: $files"
+    [ -z "$files" ] && echo "ERROR: no tests found $d" && exit 1
+
+    for f in $files
+    do 
+        #echo "tdiff $f"
+        [[ ! -z `tdiff $f` ]] && echo FAILED: ${f/.tst/}
+    done
+} | tee fail
+
+echo `wc -l  fail` tests failed
+rm fail

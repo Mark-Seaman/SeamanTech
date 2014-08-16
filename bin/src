@@ -1,0 +1,10 @@
+#!/bin/bash
+# List all the source code
+
+{
+cd $p
+find app  -type f -name '*.py'
+find bin  -type f | grep -v '.pyc'
+find test -type f -name '*.tst' 
+} | sort
+

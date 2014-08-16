@@ -1,0 +1,10 @@
+#!/bin/bash
+# Reset the SQL database
+
+cd $pa
+rm data/brain.db
+
+./manage.py syncdb
+
+./manage.py createsuperuser --username 'SuperUser' --email 'mark.b.seaman@gmail.com'
+./manage.py runscript initialize

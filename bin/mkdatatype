@@ -1,0 +1,88 @@
+#!/usr/bin/env python
+# Create the source code for a Django data type
+
+from os.path import join,exists
+from os import chdir,environ,listdir,mkdir,getcwd
+from sys import argv
+
+
+module_name = 'module'
+
+
+# Find the names of all templates
+def template_files():
+    templates = [ 'dt_model.py', 'dt_query.py', 'dt_views.py', 'dt_tests.py',
+                  'dt_urls.py', 'scripts_dt.py',
+                  'dt.html', 'dt_list.html', 'dt_detail.html', 'dt_delete.html', 
+                  'dt_edit.html', 'dt_test.html' ]
+    return [ f for f in  sorted(listdir('generate')) if f in templates ] + \
+           [ 'templates/'+f for f in  sorted(listdir('generate/templates')) if f in templates ]
+
+
+# Convert source file
+def convert_source(text, data_type, data_type_cap,module_name):
+    my_type = data_types[data_type_cap]
+    text = text.replace('[[CLASS]]', my_type['class'])
+    text = text.replace('module_name',module_name)
+    text = text.replace('data_type',data_type)
+    text = text.replace('Data_Type',data_type_cap)
+    return text
+
+
+# Print the source code
+def show_code(path, text):
+    show = False
+    if show:
+        print '----------------------------------------'
+        print '    ',path
+        print '----------------------------------------'
+        print text
+    else:
+        print '    ',path
+
+
+# Write the source code to the app directory
+def write_source(code, filename, text):
+    if filename!='dt_query.py' or not exists(code):
+        f=open(code, 'w')
+        f.write(text)
+        f.close()
+        show_code(code, text)
+
+
+# Create source file
+def create_source_file(f, data_type, data_type_cap,module_name):
+    path = join('generate',f)
+    if not exists(module_name):
+        mkdir(module_name)
+    if not exists(module_name+'/templates'):
+        mkdir(module_name+'/templates')
+    code = join(module_name,f.replace('dt',data_type))
+    if exists(path):
+        text = open(path).read()
+        text = convert_source(text, data_type, data_type_cap,module_name)
+        write_source(code, f, text)
+    else:
+        print 'No snippet found, ', path
+
+
+# Build all of the source code files
+def build_source_files(data_type,data_type_cap,module_name):
+    files =  template_files() 
+    for f in files:
+        create_source_file(f, data_type,data_type_cap,module_name)
+
+
+
+# Create all source code
+def generate_source_files(data_types):
+    for dt in data_types:
+        data_type = dt
+        module = data_types[dt]['module']
+        print "Create the source code for a Django data type, ", module+'/'+data_type
+        build_source_files(data_type.lower(),data_type,module)
+ 
+
+chdir (environ['pa'])
+execfile('generate/data_types.py')
+generate_source_files(data_types)
