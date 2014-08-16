@@ -1,0 +1,99 @@
+* Step 1 - App Startup *                           -*-muse-*-
+
+
+Start at the top directory for your application.
+
+    cd $p
+
+
+Create the project framework using the following shell command.
+
+    django-admin.py startproject app
+
+
+Create the application framework for the SRS app using the following shell command.
+
+    cd project
+    manage.py startapp srs
+
+
+List the files using 'find'.
+
+    .
+    ./app
+    ./app/__init__.py
+    ./app/settings.py
+    ./app/urls.py
+    ./app/__init__.pyc
+    ./app/settings.pyc
+    ./app/wsgi.py
+    ./manage.py
+    ./srs
+    ./srs/tests.py
+    ./srs/__init__.py
+    ./srs/views.py
+    ./srs/models.py
+    ./srs/admin.py
+
+
+Build a code for url routes in urls.py
+
+    # urls.py
+
+    from django.conf.urls import patterns, include, url
+    from django.http import HttpResponse
+    
+    # View function
+    def hello(request):
+        return HttpResponse('<h1>Impact SRS</h1><a href="/">About Impact SRS</a>')
+    
+    # Routes to views
+    urlpatterns = patterns('',  
+        url(r'^$', hello),
+    )
+
+
+Run the development server.
+
+    manage.py runserver
+
+
+Show the page from the app in a browser
+
+    firefox http://127.0.0.1:8000/
+
+
+Strip down the settings to the bare essentials.  Modify settings.py
+
+    # settings.py
+    # Application settings required
+    
+    DEBUG=True
+    
+    # App startup
+    SECRET_KEY = 's!qs5!9(bhkv7#hn#172zm_*l#m)j(8lv1gj)#84p$9+^&amp;bn9e'
+    
+    # Location of router
+    ROOT_URLCONF = app.urls'
+    
+    # Shim to run application from Apache
+    WSGI_APPLICATION = app.wsgi.application'
+    
+
+Automate restarting the server.   Create script 'run'.
+
+    #!/bin/bash
+    # Run the code to demo this project
+    
+    # Kill the old server
+    x=`ps -ef | grep -v grep | grep runserver | awk '{ print $2 }'`
+    [ ! -z "$x" ] && echo kill $x && kill $x
+    
+    # Run the server
+    cd $p/app
+    rbg manage.py runserver
+    sleep 2
+    
+    # Display the page
+    rbg firefox localhost:8000
+

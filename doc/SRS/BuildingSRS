@@ -1,0 +1,26 @@
+* Building SRS *                                       -*-muse-*-
+
+This document covers the step-by-step instructions for building the SRS system for Impact Group.
+
+Follow these steps to learn how to set up this type of web application.
+
+
+**Getting Started**
+
+
+This doc will teach you how to build your own app from scratch.
+
+Each step is captured in source code.  It is built up piece by piece.  You can see each
+set of changes required to get to the next step.  
+
+You can skip to the end and have your own running application.  Or you can go through
+every step one at a time.
+
+You can skip any steps that you don't care about and modify anything that you want to do
+differently.
+
+
+**Documents**
+
+    [[Index]]
+    [[.][Documents Directory]]

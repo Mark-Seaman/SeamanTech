@@ -1,0 +1,163 @@
+* Step 3 - Template Inheritance *                                    -*-muse-*-
+
+[[Index]]
+
+Build srs/views.py
+
+    # src/views.py
+    from django.http import HttpResponse
+
+    # View function
+    def hello(request):
+        return HttpResponse(
+            '<html><head>'+\
+            '    <link href="/static/bootstrap-combined.min.css" rel="stylesheet">'+\
+            '</head><body>'+\
+            '<a href="/"><img src="/static/Impact-SRS.png"/>Click on the logo</a>'+\
+            '<p>Is the text formatted correctly?</p></body></html>'
+            )
+
+
+Convert urls.py to use this code
+
+    # app/urls.py
+    
+    from django.conf.urls import patterns, include, url
+    
+    # Routes to views
+    urlpatterns = patterns('',  
+        url(r'^$', hello),
+    )
+
+
+Make a directory for templates.
+
+    cd $p/app
+    mkdir templates
+
+
+Load templates from this directory.
+
+
+    # app/settings.py
+    from os.path import dirname
+    
+    # Location of app directory
+    BASE_DIR = dirname(dirname(__file__))
+    
+    # Loading templates
+    TEMPLATE_DIRS = (
+        BASE_DIR+"/templates",
+    )
+
+    
+Add templates/home.html
+
+    <html>
+    
+      <head>
+        <link href="/static/bootstrap-combined.min.css" rel="stylesheet">
+      </head>
+    
+      <body>
+        
+        <a href="/">
+          <img src="/static/Impact-SRS.png"/>
+          Click on the logo
+        </a>
+        <h1>Home Page</h1>
+        <p>Is the text formatted correctly?</p>
+      </body>
+    
+    </html>
+
+
+Load the templates in the views.py
+
+    # srs/views.py
+    # Create your views here.
+    
+    from django.shortcuts import render
+    
+    def home(request):
+        return render(request, 'home.html')
+
+
+Hook up the new page to the router.
+
+    # urls.py
+    
+    from django.conf.urls import patterns, include, url
+    
+    # Routes to views
+    urlpatterns = patterns('',  
+        url(r'^$', 'srs.views.hello'),
+        url(r'^home$', 'srs.views.home'),
+    )
+
+
+Create a basic layout.html
+
+    <html>
+    
+      <head>
+        <link href="/static/bootstrap-combined.min.css" rel="stylesheet">
+      </head>
+    
+      <body>
+        <a href="/">
+          <img src="/static/Impact-SRS.png"/>
+          Click on the logo
+        </a>
+    
+        {% autoescape off %}
+        {% block content %}{% endblock %}
+        {% endautoescape %}
+    
+      </body>
+    
+    </html>
+    
+    
+Inherit the style from layout.html for home.html
+
+    <!--  templates/home.html -->
+    {% extends "layout.html" %}
+    
+    {% block content %}
+
+        <h1>Home Page</h1>
+        <p>Is the text formatted correctly?</p>
+    
+    {% endblock %}
+    
+
+Every page can inherit from the layout and get all of the goodies (see hello.html)
+
+
+views.py
+
+    # srs/views.py
+    # Create your views here.
+    
+    from django.shortcuts import render
+    
+    def hello(request):
+        return render(request, 'hello.html')
+    
+    def home(request):
+        return render(request, 'home.html')
+
+
+urls.py
+
+    # app/urls.py
+    
+    from django.conf.urls import patterns, url
+    
+    # Routes to views
+    urlpatterns = patterns('',  
+        url(r'^$', 'srs.views.hello'),
+        url(r'^home$', 'srs.views.home'),
+    )
+

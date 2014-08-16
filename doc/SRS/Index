@@ -1,0 +1,33 @@
+* Index *                                    -*-muse-*-
+
+Steps to building the SRS application
+
+[[BuildingSRS]]
+
+**Building Topics App**
+
+ * [[Step1][App startup]]
+ * [[Step2][Setup Styling]]
+ * [[Step3][Template Inheritance]]
+ * [[Step4][Links to routes]]
+ * [[Step5][User models]]
+ * [[Step6][Authentication]]
+ * [[Step7][User Login]]
+ * [[Step8][Five Views]]
+ * Edit Topics
+ * Add Comments
+ * Comment moderation
+ * Admin
+ * User avatars
+ * Dates
+ * Pagination
+ * Email notifications
+ * Import Topics
+ * Export Topics
+ * Scripting
+ * Django tests
+ * Unit tests
+ * Page tests
+ * System tests
+ * Deploy to production
+

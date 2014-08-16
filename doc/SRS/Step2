@@ -1,0 +1,83 @@
+* Step 2 - Setup Styling *                                    -*-muse-*-
+
+[[Index]]
+
+Configure a static server to serve static media types (eg. JS, CSS, IMG, HTML)
+
+
+Modify app/settings.py  (add the following)
+
+    # Static server
+    STATIC_URL = '/static/'
+    
+    STATIC_ROOT = ''
+    
+    STATICFILES_DIRS = ( '/home/seaman/Projects/impact/app/static', )
+    
+    STATICFILES_FINDERS = (
+        'django.contrib.staticfiles.finders.FileSystemFinder',
+        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+        #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+        )
+    
+    INSTALLED_APPS = (
+        'django.contrib.staticfiles',
+        )
+    
+        
+Add an image to the site. 
+
+    cp Impact-SRS.png $p/app/static
+
+
+Modify app/urls.py
+
+    # urls.py
+    from django.conf.urls import patterns, include, url
+    from django.http import HttpResponse
+    
+    # View function
+    def hello(request):
+        return HttpResponse(
+            '<a href="/"><img src="/static/Impact-SRS.png"/>Click on the logo</a>'
+            )
+    
+    # Routes to views
+    urlpatterns = patterns('',  
+        url(r'^$', hello),
+    )
+    
+
+Add library for Twitter Bootstrap.
+
+    cp bootstrap-combined.min.css static/
+
+
+Modify the web page in app/urls.py
+
+    # View function
+    def hello(request):
+        return HttpResponse(
+            '<html><head>'+\
+            '    <link href="/static/bootstrap-combined.min.css" rel="stylesheet">'+\
+            '</head><body>'+\
+            '<a href="/"><img src="/static/Impact-SRS.png"/>Click on the logo</a>'+\
+            '<p>Is the text formatted correctly?</p></body></html>'
+            )
+
+
+Or load the Bootstrap library from a remote server
+
+    <link
+    href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" 
+    rel="stylesheet">
+
+
+A project specific stylesheet lets you style the application.
+
+    <link  href="/static/impact.css" rel="stylesheet" />
+
+
+A project specific JS library lets you provide front-end JS.
+
+    <script src="/static/impact.js"></script>

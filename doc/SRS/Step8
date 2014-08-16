@@ -1,0 +1,79 @@
+* Step 8 - Five Views *                                       -*-muse-*-
+
+Every object in a web application needs five operations.
+
+This lesson shows you how to create support for the basic five operations.
+
+Each type of view is shown in its simplest form.
+
+
+Define a class for each view type in srs/views_contact.py
+
+
+    # srs/views_contact.py
+
+    # List
+
+    class ContactList(ListView):
+        model = Contact
+        template_name = 'contact_list.html'
+
+
+    # Detail
+
+    class ContactDetail(DetailView):
+        model = Contact
+        template_name = 'contact_detail.html'
+    
+
+    # Add
+
+    @login_required(login_url='/login')
+    class ContactAdd(CreateView):
+        model = Contact
+        template_name = 'contact_edit.html'
+
+    # Edit
+
+    @login_required(login_url='/login')
+    class ContactEdit(UpdateView):
+        model = Contact
+        template_name = 'contact_edit.html'
+
+    # Delete
+
+    @login_required(login_url='/login')
+    class ContactDelete(DeleteView):
+        model = Contact
+        success_url = reverse_lazy('contact_list')
+        template_name = 'contact_delete.html'
+
+
+Notice that login is required for Add,Edit,Delete but not for List,Detail.
+
+These rules must be customized for your application.
+
+
+Now we define the URL routes in srs/contact_urls.py
+
+    # urls_contact.py
+    # Contact urls
+    
+    from django.conf.urls import patterns, include, url
+    from django.views.generic import TemplateView
+    
+    # Import my classes
+    from contact_views   import ContactList, ContactDetail, ContactAdd, ContactEdit, ContactDelete
+        
+    # Contact  (List, Detail, Add, Edit, Delete, Test)
+    urlpatterns = patterns('',
+        url(r'^$',                    TemplateView.as_view(template_name="contact.html")),
+        url(r'^/$',                   ContactList.as_view(), name='contact_list'),
+        url(r'^/(?P<pk>\d+)$',        ContactDetail.as_view(), name='contact-detail'),
+        url(r'^/add$',                ContactAdd.as_view(), name='contact_add'),
+        url(r'^/(?P<pk>\d+)/edit$',   ContactEdit.as_view(), name='contact_update'),
+        url(r'^/(?P<pk>\d+)/delete$', ContactDelete.as_view(), name='contact_delete'),
+        url(r'^/test$',               TemplateView.as_view(template_name="contact_test.html")),
+    )
+
+

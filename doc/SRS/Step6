@@ -1,0 +1,76 @@
+* Authentication *                                       -*-muse-*-
+
+Managing users and and permissions they have is typically very complex.
+
+Django offers a complete system for user management.
+
+Turn on the authentication system.
+
+    # app/settings.py
+    # Application settings required
+    
+    INSTALLED_APPS = (
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.staticfiles',
+        'srs',
+    )
+    
+    MIDDLEWARE_CLASSES = (
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+    )
+
+
+Add a user to the system.
+
+    from django.contrib.auth.models import User
+    user = User.objects.create_user('myusername', 'me@here.com', 'mypassword')
+
+
+Update extra info.
+
+    user.last_name = 'Lincoln'
+    user.first_name = 'Abraham'
+    user.save()
+
+
+Changing a password
+
+    manage.py changepassword myuser
+
+
+Checking a web request
+
+    # srs/views.py
+    # Custom views
+    
+    from django.shortcuts import render, redirect
+    
+    def home(request):
+        if request.user.is_authenticated():
+            return render(request, 'secure.html')
+        else:
+            return render(request, 'home.html')
+    
+    def secure(request):
+        if not request.user.is_authenticated():
+            return redirect('no_access')
+        return render(request, 'secure.html')
+    
+    def no_access(request,id):
+        return render(request, 'no_access.html')
+
+
+Web page routing
+
+    # app/urls.py
+    # Routes to views
+    
+    from django.conf.urls import patterns, url
+    
+    urlpatterns = patterns('',  
+        url(r'^$', 'srs.views.home'),
+        url(r'^secure$', 'srs.views.secure'),
+        url(r'^no_access$', 'srs.views.no_access'),
+    )
