@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+    <h2>My Times</h2>
+    * 
+    <a href='/time/add'>Add Time</a> *
+    <a href='/time/test'>Time Test</a> *
+
+    {% if debug %}
+    <pre>
+      {{ object_list }}
+    </pre>
+    {% endif %}
+
+    <hr>
+    <table>
+        {% for row in object_list %}
+            <tr>
+              {% for column in row %}
+                  <td>{{ column }}</td>
+              {% endfor %}
+              <td>
+                <a href="/time/{{ row.0 }}">Details</a>
+              </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

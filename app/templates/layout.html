@@ -1,0 +1,39 @@
+<html>
+
+  <head>
+    <link href="/static/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="/static/hammer.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class='header'>
+      <a href="/"> <h1 style='color:blue'>Brain Server</h1> <br>Home </a>
+
+      <div style='float:right'>
+
+        {% if user.is_authenticated and user.is_staff %}
+        <div style='float:right'>
+          Logged in as,
+          <strong>{% firstof user.first_name user.username %}</strong>.
+          <!-- <a href="/password_change">Change password</a> -->
+          <a href="/logout">Log out</a>
+        </div>
+        {% endif %}
+
+        <p>Welcome, {{user}}</p>
+        <p><a href='/logout?next="/"'>Logout</a></p>
+
+      </div>
+
+      <hr>
+    </div>
+    {% autoescape off %}
+    {% block content %}
+    
+    {% endblock %}
+    {% endautoescape %}
+
+
+  </body>
+
+</html>
