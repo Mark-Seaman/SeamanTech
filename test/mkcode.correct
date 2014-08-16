@@ -1,0 +1,29 @@
+Create the source code for a Django data type,  doc/Doc
+     doc/doc_model.py
+     doc/doc_tests.py
+     doc/doc_urls.py
+     doc/doc_views.py
+     doc/scripts_doc.py
+     doc/templates/doc.html
+     doc/templates/doc_delete.html
+     doc/templates/doc_detail.html
+     doc/templates/doc_edit.html
+     doc/templates/doc_list.html
+     doc/templates/doc_test.html
+Create the source code for a Django data type,  task/Time
+     task/time_model.py
+     task/time_tests.py
+     task/time_urls.py
+     task/time_views.py
+     task/scripts_time.py
+     task/templates/time.html
+     task/templates/time_delete.html
+     task/templates/time_detail.html
+     task/templates/time_edit.html
+     task/templates/time_list.html
+     task/templates/time_test.html
+mv doc/scripts_doc.py scripts/doc.py
+Creating tables ...
+Installing custom SQL ...
+Installing indexes ...
+Installed 0 object(s) from 0 fixture(s)

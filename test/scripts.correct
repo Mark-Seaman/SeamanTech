@@ -1,0 +1,37 @@
+Run the script devtest
+Checking for users:
+   Super user - OK
+   Test Robot - OK
+   seaman - OK
+No module for script 'test_doc' found
+Run the script test_time
+Time list:  4 records
+    id        :  1
+    user      :  TestRobot
+    name      :  Jessica Putin
+    task      :  9650 Pine Ave
+    date      :  2014-06-22
+    minutes   :  60
+
+    id        :  2
+    user      :  TestRobot
+    name      :  Josiah Seaman
+    task      :  6264 Aspen Ave
+    date      :  2014-06-22
+    minutes   :  60
+
+    id        :  3
+    user      :  TestRobot
+    name      :  Jessica Seaman
+    task      :  7677 Aspen Ave
+    date      :  2014-06-22
+    minutes   :  60
+
+    id        :  4
+    user      :  TestRobot
+    name      :  Rachel Obama
+    task      :  8298 Maple Ave
+    date      :  2014-06-22
+    minutes   :  60
+
+Scripts run successfully

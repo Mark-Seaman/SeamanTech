@@ -1,0 +1,44 @@
+brian list
+No module for script 'brain' found
+No module for script 'list' found
+brian list(path=Git)
+No module for script 'brain' found
+No module for script 'list' found
+No module for script 'path=Git' found
+No module for script 'brain' found
+No module for script 'list' found
+No module for script 'title=Plan' found
+No module for script 'content=Market' found
+
+brain import /home/seaman/Documents/MyBook/Public/ShrinkingWorld/Pricing
+No module for script 'brain' found
+No module for script 'import' found
+No module for script '/home/seaman/Documents/MyBook/Public/ShrinkingWorld/Pricing' found
+
+brain import /home/seaman/Documents/MyBook/Public/ShrinkingWorld
+No module for script 'brain' found
+No module for script 'import' found
+No module for script '/home/seaman/Documents/MyBook/Public/ShrinkingWorld' found
+
+brain show /home/seaman/Documents/MyBook/Public/ShrinkingWorld/Pricing
+No module for script 'brain' found
+No module for script 'show' found
+No module for script '/home/seaman/Documents/MyBook/Public/ShrinkingWorld/Pricing' found
+-------------------------------------------
+Errors
+
+brain import
+No module for script 'brain' found
+No module for script 'import' found
+
+brain xxx
+No module for script 'brain' found
+No module for script 'xxx' found
+
+brain
+No module for script 'brain' found
+
+brain import xxx
+No module for script 'brain' found
+No module for script 'import' found
+No module for script 'xxx' found
