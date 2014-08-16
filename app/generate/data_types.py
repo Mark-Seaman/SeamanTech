@@ -4,13 +4,13 @@ data_types = {
 
    #-----------------------------------------------------------------------------
 
-    'Doc': {
-        'module': 'doc',
+    'Note': {
+        'module': 'note',
         'class': 
 '''
 from datetime import datetime
 
-class Doc(models.Model):
+class Note(models.Model):
 
     user    = models.ForeignKey(User)
     path    = models.CharField (max_length=200)
