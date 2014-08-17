@@ -35,6 +35,8 @@ app-models
 cache
 commit
 create
+db-reset
+db-sync
 diff-gen
 diff-test
 doc-diff-all
@@ -89,8 +91,6 @@ run
 run-svr
 search
 show
-sql-reset
-sql-sync
 src
 src-jack
 svr-commit
