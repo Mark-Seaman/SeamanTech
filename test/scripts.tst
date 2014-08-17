@@ -6,7 +6,7 @@ cd $pa &&
 rs devtest     &&
 rs  initialize &&
 
-rs test_doc
-rs test_time
+#rs test_doc
+#rs test_time
 
 echo 'Scripts run successfully'

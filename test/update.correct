@@ -1,4 +1,3 @@
-diff bin/install.pip /home/seaman/Projects/jack-hammer/bin/install.pip
 diff bin/project /home/seaman/Projects/jack-hammer/bin/project
 diff bin/src /home/seaman/Projects/jack-hammer/bin/src
 diff bin/var-clear /home/seaman/Projects/jack-hammer/bin/var-clear
