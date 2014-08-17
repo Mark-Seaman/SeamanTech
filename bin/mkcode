@@ -16,7 +16,7 @@ done
 
 
 # Sync the database with the models
-sql-sync
+db-sync
 
 # Test the new code
 #run

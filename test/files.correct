@@ -1,20 +1,18 @@
 Remove automatically saved files from this directory tree
 Git orig files
 Git libpeerconnection files
-/home/seaman/Projects/brain/profile
-/home/seaman/Projects/brain/README.md
+/home/seaman/Projects/seamantech/README.md
 
-/home/seaman/Projects/brain:
+/home/seaman/Projects/seamantech:
 app
 bin
 doc
 env
 logs
-profile
 README.md
 test
 
-/home/seaman/Projects/brain/app:
+/home/seaman/Projects/seamantech/app:
 app
 brain
 Brain.wpr
@@ -23,12 +21,15 @@ data
 doc
 generate
 manage.py
+note
 scripts
 static
 task
 templates
+user_doc
+util
 
-/home/seaman/Projects/brain/bin:
+/home/seaman/Projects/seamantech/bin:
 app-code
 app-models
 cache
@@ -85,12 +86,18 @@ rbg
 rmas
 rs
 run
+run-svr
 search
 show
 sql-reset
 sql-sync
 src
 src-jack
+svr-commit
+svr-console
+svr-do
+svr-restart
+svr-update
 te
 tfail
 tfix
@@ -112,29 +119,34 @@ var-set
 var-write
 welcome
 
-/home/seaman/Projects/brain/doc:
-classes
+/home/seaman/Projects/seamantech/doc:
+Anonymous
 Domains
+Home
+Index
+NewTopic
 Public
-rejects
-SRS
+seaman
+tbeilman
+template
 test
+TestDoc
+Title
+ToDo
 vars-data
 
-/home/seaman/Projects/brain/env:
+/home/seaman/Projects/seamantech/env:
 bin
 include
 lib
 local
 
-/home/seaman/Projects/brain/logs:
+/home/seaman/Projects/seamantech/logs:
 python.tst.log
 tablerw.tst.log
 user
 
-/home/seaman/Projects/brain/test:
-brain.correct
-brain.tst
+/home/seaman/Projects/seamantech/test:
 content.correct
 content.tst
 control.correct
