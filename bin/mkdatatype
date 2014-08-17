@@ -13,8 +13,8 @@ module_name = 'module'
 def template_files():
     templates = [ 'dt_model.py', 'dt_query.py', 'dt_views.py', 'dt_tests.py',
                   'dt_urls.py', 'scripts_dt.py',
-                  'dt.html', 'dt_list.html', 'dt_detail.html', 'dt_delete.html', 
-                  'dt_edit.html', 'dt_test.html' ]
+                  'dt.js', 'dt.html', 'dt_list.html', 'dt_detail.html', 'dt_delete.html', 
+                  'dt_edit.html', 'dt_test.html', 'dt_panel.html', ]
     return [ f for f in  sorted(listdir('generate')) if f in templates ] + \
            [ 'templates/'+f for f in  sorted(listdir('generate/templates')) if f in templates ]
 
@@ -43,11 +43,14 @@ def show_code(path, text):
 
 # Write the source code to the app directory
 def write_source(code, filename, text):
-    if filename!='dt_query.py' or not exists(code):
+    #if filename!='dt_query.py' or not exists(code):
+    if not exists(code):
         f=open(code, 'w')
         f.write(text)
         f.close()
         show_code(code, text)
+    else:
+        print 'File exists already,',code
 
 
 # Create source file
