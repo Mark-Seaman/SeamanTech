@@ -1,0 +1,12 @@
+#!/bin/bash
+# Run the code to demo this project
+
+# Kill the old server
+run-kill
+
+echo rbg firefox localhost:$port/$1
+
+# Run the server
+cd $p/app
+manage.py runserver $port
+

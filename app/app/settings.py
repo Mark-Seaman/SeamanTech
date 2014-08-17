@@ -10,6 +10,7 @@ TEMPLATE_DEBUG = True
 
 # Location of app directory
 BASE_DIR = dirname(dirname(__file__))
+DOC_ROOT = join(BASE_DIR,'user_doc')
 ROOT_URLCONF = 'app.urls'
     
 
@@ -45,6 +46,7 @@ INSTALLED_APPS = (
     'doc',
 #    'brain'
 #    'task',
+    'util',
 )
 
 MIDDLEWARE_CLASSES = (
