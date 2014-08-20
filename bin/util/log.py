@@ -8,7 +8,7 @@ from files import read_text,list_files
 
 # Setup the file name
 def log_file(logFile):
-    return environ['p']+'/logs/user/'+logFile+'.log'
+    return environ['p']+'/logs/'+logFile+'.log'
 
 
 # Log the page hit in page.log  (time, ip, user, page, doc) 
