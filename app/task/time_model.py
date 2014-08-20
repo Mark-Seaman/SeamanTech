@@ -13,6 +13,10 @@ from django.core.urlresolvers import reverse
 
 
     
+from project_model import Project
+from django.contrib.auth.models import User
+
+
 class Time(models.Model):
 
     user    = models.ForeignKey (User)

@@ -3,14 +3,24 @@
 
 from django.conf.urls import patterns, include, url
 
-urlpatterns = patterns('',  
-    url(r'^', include('doc.urls')),
-    url(r'^user$', 'app.views.user', name='user'),
-    url(r'^test$', 'app.views.test_view', name='test'),
-    url(r'^no_access$', 'app.views.no_access'),
+urlpatterns = patterns(
+    '',
 
+    # doc
+    url(r'^',         include('doc.urls')),
+
+    # task
+    url(r'^project/', include('task.project_urls')),
+    url(r'^time/',    include('task.time_urls')),
+
+    # other
     (r'^login', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),  
     (r'^logout', 'app.views.logout_view'),
 
     url(r'^home$', 'app.views.home', name='/'),
+    url(r'^user$', 'app.views.user', name='user'),
+    url(r'^test$', 'app.views.test_view', name='test'),
+    url(r'^no_access$', 'app.views.no_access'),
+
+
 )

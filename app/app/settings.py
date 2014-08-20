@@ -45,7 +45,8 @@ INSTALLED_APPS = (
     'django_extensions',
     'doc',
 #    'brain'
-#    'task',
+    'note',
+    'task',
     'util',
 )
 
