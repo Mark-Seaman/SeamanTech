@@ -2,4 +2,4 @@
 # Watch for changes in the docs
 
 cd $pd
-find | sort | grep -v '\.out' | range 3000 3500 
+find | sort | grep -v '\.out' | range 2000 3500 
