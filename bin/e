@@ -2,7 +2,12 @@
 # Edit a file
 
 # Use gedit by default  (comment these two lines to use emacs instead)
-[ `hostname` == 'web126' ] && vi $* && exit 
+useEmacs=FALSE
+[ `hostname` == 'seaman-ultra' ] && useEmacs=TRUE
+[ `hostname` == 'seaman-hammer' ] && useEmacs=TRUE
+[ `hostname` == 'seaman-chute' ] && useEmacs=TRUE
+[ "$useEmacs" != TRUE ] && vi $* && exit 0
+
 
 # Check to see if emacs is already running
 process=`ps -ef|grep -v grep|grep emacs`
