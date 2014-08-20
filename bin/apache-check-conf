@@ -1,0 +1,5 @@
+#!/bin/bash
+# Check the apache configuration
+
+echo "Comparing $pb/seamantech.conf /etc/apache2/sites-available/seamantech.conf"
+diff $pb/seamantech.conf /etc/apache2/sites-available/seamantech.conf
