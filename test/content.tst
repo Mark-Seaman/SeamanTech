@@ -1,6 +1,7 @@
 #!/bin/bash
 # Format a document as HTML
 
+{
 mkdir -p $pd/Public $pd/test $pd/Public/test $p/logs  $p/logs/user 
 touch $pd/Domains
 
@@ -88,3 +89,5 @@ page-get localhost:8052 test TestIndex
 
 # Clean up after test
 rm $pd/Public/test/*
+
+} | filter-path
