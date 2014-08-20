@@ -1,0 +1,8 @@
+#!/bin/bash
+# List the databases on our DB server
+
+[ "$PGHOST" = "" ] && echo 'need to set var PG_HOST' && exit 1
+[ "$PGUSER" = "" ] && echo 'need to set var PG_USER' && exit 1
+[ "$PGPORT" = "" ] && echo 'need to set var PG_PORT' && exit 1
+
+psql -h $PGHOST -p $PGPORT -U $PGUSER --command '\list'
