@@ -27,12 +27,17 @@ app/note/note_query.py
 app/note/note_tests.py
 app/note/note_urls.py
 app/note/note_views.py
-app/note/scripts_note.py
+app/scripts/add_data.py
 app/scripts/brain.py
 app/scripts/devtest.py
 app/scripts/initialize.py
 app/scripts/__init__.py
+app/scripts/note.py
+app/scripts/project.py
 app/scripts/records.py
+app/scripts/show_data.py
+app/scripts/test_data.py
+app/scripts/time.py
 app/task/admin.py
 app/task/faker.py
 app/task/__init__.py
@@ -41,8 +46,6 @@ app/task/project_model.py
 app/task/project_query.py
 app/task/project_urls.py
 app/task/project_views.py
-app/task/scripts_project.py
-app/task/scripts_time.py
 app/task/tests.py
 app/task/time_model.py
 app/task/time_query.py
