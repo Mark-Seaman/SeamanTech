@@ -128,7 +128,6 @@ seaman
 tbeilman
 template
 test
-TestDoc
 Title
 ToDo
 vars-data
@@ -138,10 +137,9 @@ bin
 include
 lib
 local
+man
 
 Projects/seamantech/logs:
-python.tst.log
-tablerw.tst.log
 user
 
 Projects/seamantech/test:
