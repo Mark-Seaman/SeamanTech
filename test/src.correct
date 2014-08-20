@@ -118,6 +118,7 @@ bin/src-jack
 bin/svr-commit
 bin/svr-console
 bin/svr-do
+bin/svr-hosts
 bin/svr-restart
 bin/svr-update
 bin/tdiff
