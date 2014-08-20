@@ -52,6 +52,9 @@ app/task/time_query.py
 app/task/time_urls.py
 app/task/time_views.py
 app/task/views.py
+bin/apache-check-conf
+bin/apache-configure
+bin/apache-restart
 bin/app-code
 bin/app-models
 bin/cache

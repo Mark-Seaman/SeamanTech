@@ -27,6 +27,9 @@ user_doc
 util
 
 Projects/seamantech/bin:
+apache-check-conf
+apache-configure
+apache-restart
 app-code
 app-models
 cache
