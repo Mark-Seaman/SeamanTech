@@ -1,9 +1,6 @@
-Remove automatically saved files from this directory tree
-Git orig files
-Git libpeerconnection files
-/home/seaman/Projects/seamantech/README.md
+Projects/seamantech/README.md
 
-/home/seaman/Projects/seamantech:
+Projects/seamantech:
 app
 bin
 doc
@@ -12,7 +9,7 @@ logs
 README.md
 test
 
-/home/seaman/Projects/seamantech/app:
+Projects/seamantech/app:
 app
 brain
 Brain.wpr
@@ -29,7 +26,7 @@ templates
 user_doc
 util
 
-/home/seaman/Projects/seamantech/bin:
+Projects/seamantech/bin:
 app-code
 app-models
 cache
@@ -96,6 +93,7 @@ src-jack
 svr-commit
 svr-console
 svr-do
+svr-hosts
 svr-restart
 svr-update
 te
@@ -119,7 +117,7 @@ var-set
 var-write
 welcome
 
-/home/seaman/Projects/seamantech/doc:
+Projects/seamantech/doc:
 Anonymous
 Domains
 Home
@@ -135,18 +133,18 @@ Title
 ToDo
 vars-data
 
-/home/seaman/Projects/seamantech/env:
+Projects/seamantech/env:
 bin
 include
 lib
 local
 
-/home/seaman/Projects/seamantech/logs:
+Projects/seamantech/logs:
 python.tst.log
 tablerw.tst.log
 user
 
-/home/seaman/Projects/seamantech/test:
+Projects/seamantech/test:
 content.correct
 content.tst
 control.correct
