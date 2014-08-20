@@ -8,11 +8,17 @@ cd $p/app
 mkdatatype 
 
 # Move the test code to the right place
-for f in `ls doc/scripts_*.py`
-do
-    echo mv  doc/${f/doc\//} scripts/${f/doc\/scripts_/}
-    mv  doc/${f/doc\//} scripts/${f/doc\/scripts_/}
-done
+function move_scripts
+{
+
+    for f in `ls $1/scripts_*.py`
+    do
+        echo mv  $1/${f/$1\//} scripts/${f/$1\/scripts_/}
+        mv  $1/${f/$1\//} scripts/${f/$1\/scripts_/}
+    done
+}
+move_scripts task
+move_scripts note
 
 
 # Sync the database with the models
