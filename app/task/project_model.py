@@ -1,5 +1,5 @@
-# task/time_model.py
-# Model for Time records
+# task/project_model.py
+# Model for Project records
 
 
 #############################################################################
@@ -13,14 +13,13 @@ from django.core.urlresolvers import reverse
 
 
     
-class Time(models.Model):
+class Project(models.Model):
 
-    user    = models.ForeignKey (User)
-    project = models.ForeignKey (Project)
-    name    = models.CharField  (max_length=40)
-    task    = models.CharField  (max_length=40)
-    date    = models.DateField  (auto_now_add=True)  
-    minutes = models.IntegerField(default='60')
+    name    = models.CharField (max_length=40)
+    client  = models.CharField (max_length=40)
+    task    = models.CharField (max_length=40)
+    date    = models.DateField (auto_now_add=True)  
+    notes   = models.TextField (null=True)
 
 
     # Format a record as a string
@@ -29,7 +28,7 @@ class Time(models.Model):
 
     # Back trace a url to a view
     def get_absolute_url(self):
-        return reverse('time-detail', kwargs={'pk': self.pk})
+        return reverse('project-detail', kwargs={'pk': self.pk})
 
     # Object field handling
     def __iter__(self):
