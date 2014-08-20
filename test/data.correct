@@ -1,4 +1,14 @@
 brain JSON file
+<<<<<<< HEAD
+File: data/brain.json 290 Lines
+290
+Installed 30 object(s) from 1 fixture(s)
+brain-doc JSON file
+File: data/brain-doc.json 290 Lines
+290
+Installed 30 object(s) from 1 fixture(s)
+=======
 376
 brain-doc JSON file
 376
+>>>>>>> 376e1516062b077b064bbd6d663158a7b5b072f9
