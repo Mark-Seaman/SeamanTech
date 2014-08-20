@@ -30,14 +30,10 @@ app/note/note_urls.py
 app/note/note_views.py
 app/note/scripts_note.py
 app/scripts/brain.py
-app/scripts/clear_doc.py
 app/scripts/devtest.py
-app/scripts/doc.py
 app/scripts/initialize.py
 app/scripts/__init__.py
 app/scripts/records.py
-app/scripts/test_doc.py
-app/scripts/test_time.py
 app/task/admin.py
 app/task/__init__.py
 app/task/models.py
@@ -118,6 +114,7 @@ bin/src-jack
 bin/svr-commit
 bin/svr-console
 bin/svr-do
+bin/svr-hosts
 bin/svr-restart
 bin/svr-update
 bin/tdiff
