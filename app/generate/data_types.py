@@ -16,7 +16,24 @@ class Note(models.Model):
     path    = models.CharField (max_length=200)
     title   = models.CharField (max_length=200)
     text    = models.TextField ()
-    time    = models.DateTimeField(default= datetime.now())  
+    time    = models.DateTimeField(auto_now_add=True)  
+'''
+
+    },
+
+    #-----------------------------------------------------------------------------
+
+    'Project': {
+        'module': 'task',
+        'class': 
+'''
+class Project(models.Model):
+
+    name    = models.CharField (max_length=40)
+    client  = models.CharField (max_length=40)
+    task    = models.CharField (max_length=40)
+    date    = models.DateField (auto_now_add=True)  
+    notes   = models.TextField (null=True)
 '''
 
     },
@@ -29,13 +46,14 @@ class Note(models.Model):
 '''
 class Time(models.Model):
 
-    user    = models.ForeignKey(User)
-    name    = models.CharField (max_length=200)
-    task    = models.CharField (max_length=40)
-    date    = models.DateField(auto_now_add=True)  
+    user    = models.ForeignKey (User)
+    project = models.ForeignKey (Project)
+    name    = models.CharField  (max_length=40)
+    task    = models.CharField  (max_length=40)
+    date    = models.DateField  (auto_now_add=True)  
     minutes = models.IntegerField(default='60')
 '''
 
-    },
+    },   
 
 }

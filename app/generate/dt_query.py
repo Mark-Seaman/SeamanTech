@@ -1,7 +1,6 @@
 # module_name/data_type_query.py
 # Model for Data_Type records
 
-#from django.contrib.auth.models import User
 
 from data_type_model import Data_Type
 
@@ -61,7 +60,7 @@ def add_data_type(data):
         c = o[0]
     else:
         c = Data_Type()
-    #c.name, c.address, c.phone = data
+    c.name, c.xxx = data
     c.save()
     return c
 
