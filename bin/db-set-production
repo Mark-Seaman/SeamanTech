@@ -1,0 +1,7 @@
+#!/bin/bash
+# Set the database to the production database using PostGres
+
+cd $pa && 
+ln -f app/db_production.py app/db.py && 
+echo "Successfully switched to production database"
+

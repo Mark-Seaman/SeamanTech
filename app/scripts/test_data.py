@@ -10,8 +10,8 @@ from task.project_query import test_project
 # Run the main job
 def run():
 
-    test_time()
     test_project()
+    test_time()
     #test_note()
 
     system ('rs records')

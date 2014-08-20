@@ -1,0 +1,7 @@
+#!/bin/bash
+# Set the database to the development database using SQL lite
+
+cd $pa && 
+ln -f app/db_development.py app/db.py && 
+echo "Successfully switched to development database"
+

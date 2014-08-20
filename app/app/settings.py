@@ -44,7 +44,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_extensions',
     'doc',
-#    'brain'
     'note',
     'task',
     'util',
@@ -65,13 +64,5 @@ TEMPLATE_DIRS = (
     BASE_DIR+"/templates",
 )
 
-
-# Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': join(BASE_DIR, 'data', 'brain.db'),
-    }
-}
-
+from db import DATABASES
 
