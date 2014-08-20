@@ -1,0 +1,12 @@
+#!/bin/bash
+# Create a new database on our DB server
+
+[ $# -ne 1 ] && echo 'usage: db-destroy NameOfNewDB' && exit 1
+
+dbName=$1
+
+[ "$PGHOST" = "" ] && echo 'need to set var PG_HOST' && exit 1
+[ "$PGUSER" = "" ] && echo 'need to set var PG_USER' && exit 1
+[ "$PGPORT" = "" ] && echo 'need to set var PG_PORT' && exit 1
+
+dropdb -h $PGHOST -p $PGPORT -U $PGUSER $dbName
