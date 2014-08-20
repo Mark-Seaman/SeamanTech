@@ -2,9 +2,41 @@
 # Reset the SQL database
 
 cd $pa
-rm data/brain.db
+db=SeamanTech
 
+
+# Production server
+[ `hostname` == seaman-sws ] && 
+{ 
+    ~/base-bin/db-destroy $db\_production && 
+    ~/base-bin/db-create  $db\_production
+     echo "Created the production database"
+}
+
+# Staging server
+[ `hostname` == staging.seaman-sws ] && 
+{ 
+    db=SRS_staging
+    ~/base-bin/db-destroy $db\_staging && 
+    ~/base-bin/db-create  $db\_staging
+    echo "Created the staging database"
+}
+
+# Dev servers
+[ `hostname` == seaman-chute  ] && isDev=TRUE
+[ `hostname` == seaman-hammer ] && isDev=TRUE
+[ `hostname` == seaman-ultra  ] && isDev=TRUE
+[ "$isDev" == TRUE ] &&
+{
+    rm $pa/data/SeamanTech_development.db
+    echo "Created the test database"
+}
+
+# Sync models
 ./manage.py syncdb
 
+# Create a super user
 ./manage.py createsuperuser --username 'SuperUser' --email 'mark.b.seaman@gmail.com'
+
+# Initialize the tables with starting info
 ./manage.py runscript initialize
