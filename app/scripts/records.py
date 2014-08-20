@@ -1,14 +1,14 @@
 # Count the database records
 
-#from doc.doc_model   import Doc
-#from task.time_model import Time
+from task.time_model    import Time
+from task.project_model import Project
 
 def count_records(object,label):
     print len(object.objects.all()),label
 
 def run():
-#    count_records(Doc,'Doc')
-#    count_records(Time,'Time')
-    print 'No records listed'
+    count_records(Project,'Project')
+    count_records(Time,'Time')
+    #print 'No records listed'
 
 

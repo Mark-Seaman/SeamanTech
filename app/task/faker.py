@@ -66,6 +66,22 @@ def fake_idea():
 def fake_award():
     return pick(awards)
 
+# Task name
+def fake_task():
+    return choice(['TPS reports', 'Take out trash', 'Arrange blind date', 'Plan a coup'])
+
+# Project name
+def fake_project():
+    return choice('''
+Space Shuttle
+Launch Invasion
+Build First Computer
+Take Over World
+Spread Virus
+Launch Missles
+    '''.split('\n')[1:-1])
+
+
 first       = read_lines('first_names')
 last        = read_lines('last_names')
 adjectives  = read_lines('adjectives')

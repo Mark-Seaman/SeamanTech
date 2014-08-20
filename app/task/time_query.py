@@ -1,10 +1,12 @@
 # task/time_query.py
 # Model for Time records
 
+from django.contrib.auth.models import User
+from random        import choice,randint
 
-from time_model import Time
-
-from faker import fake_name
+from project_model import Project
+from time_model    import Time
+from faker         import fake_task
 
 
 # Get a table listing from the database
@@ -60,15 +62,23 @@ def add_time(data):
         c = o[0]
     else:
         c = Time()
-    c.name, c.xxx = data
+    c.user,c.project,c.name, c.task,c.minutes = data
     c.save()
     return c
+
+# Select a random user
+def random_user():
+    return choice(User.objects.all())
+# Select a random project
+
+def random_project():
+    return choice(Project.objects.all())
 
 
 # Add some fake Time records
 def add_fake_time(num=1):
     for i in range(num):
-        data = [fake_name()]
+        data = [random_user(), random_project(), fake_task(), fake_task(),randint(30,90)]
         add_time(data)
 
 

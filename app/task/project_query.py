@@ -4,7 +4,7 @@
 
 from project_model import Project
 
-from faker import fake_name
+from faker import fake_project, fake_task, fake_company
 
 
 # Get a table listing from the database
@@ -60,7 +60,7 @@ def add_project(data):
         c = o[0]
     else:
         c = Project()
-    c.name, c.xxx = data
+    c.name, c.client,c.task = data
     c.save()
     return c
 
@@ -68,7 +68,7 @@ def add_project(data):
 # Add some fake Project records
 def add_fake_project(num=1):
     for i in range(num):
-        data = [fake_name()]
+        data = [fake_project(),fake_company(),fake_task()]
         add_project(data)
 
 
