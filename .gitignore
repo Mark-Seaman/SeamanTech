@@ -7,6 +7,7 @@ __pycache__/
 *.py[cod]
 *.orig
 app/data/*.json
+app/app/db.py
 
 # C extensions
 *.so
