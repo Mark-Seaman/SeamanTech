@@ -1,0 +1,5 @@
+#!/bin/bash
+# Browse the remote site
+
+wf seamantech.com
+
