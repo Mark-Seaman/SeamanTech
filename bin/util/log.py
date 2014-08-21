@@ -1,14 +1,16 @@
 # Read and write a system log file
 
 from os import environ,remove
+from os.path import join,dirname
 from datetime import datetime
 
 from files import read_text,list_files
+from app.settings import BASE_DIR
 
 
 # Setup the file name
 def log_file(logFile):
-    return environ['p']+'/logs/'+logFile+'.log'
+    return join(dirname(BASE_DIR), 'logs', logFile+'.log')
 
 
 # Log the page hit in page.log  (time, ip, user, page, doc) 
@@ -33,7 +35,7 @@ def show_log(filename='page'):
 
 # Get the contents of a log file
 def list_logs():
-    d = environ['p']+'/logs/'
+    d = join(dirname(BASE_DIR), 'logs')
     for f in list_files(d):
         f = f.replace('.log','')
         log = show_log(f)
@@ -42,7 +44,7 @@ def list_logs():
 
 # Get the contents of a log file
 def clear_logs():
-    d = environ['p']+'/logs/'
+    d = join(dirname(BASE_DIR), 'logs')
     for f in list_files(d):
         f = f.replace('.log','')
         print 'remove', log_file(f)
