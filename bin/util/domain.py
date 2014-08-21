@@ -7,7 +7,7 @@ from re         import compile, IGNORECASE, DOTALL
 from wiki  import *
 from tabs  import format_tabs, format_doc
 from files import read_input, read_text, write_file, is_writable
-from app.settings import DOC_ROOT
+from settings import DOC_ROOT
 
 
 # Read the domain mapping from a file

@@ -13,7 +13,7 @@ from os         import system
 from tabs  import format_doc, format_tabs
 from wiki  import convert_html
 from files import read_input, read_text, read_file, write_file, do_command, list_files, list_dirs
-from app.settings import DOC_ROOT
+from settings import DOC_ROOT
 
 
 #-----------------------------------------------------------------------------

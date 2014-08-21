@@ -5,7 +5,7 @@ from os.path import join,dirname
 from datetime import datetime
 
 from files import read_text,list_files
-from app.settings import LOG_DIR
+from settings import LOG_DIR
 
 
 # Setup the file name

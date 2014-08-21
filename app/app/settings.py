@@ -3,16 +3,17 @@
 
 from os.path import dirname, join
 
-# Error messages
-DEBUG=True
-TEMPLATE_DEBUG = True
-
 
 # Location of app directory
 BASE_DIR    = dirname(dirname(__file__))
 DOC_ROOT    = join(BASE_DIR,'user_doc')
 LOG_DIR     = join(dirname(BASE_DIR), 'logs')
 SCRIPTS_DIR = join(dirname(BASE_DIR), 'scripts')
+
+
+# Error messages
+DEBUG=True
+TEMPLATE_DEBUG = True
 
 
 # Routes
@@ -69,5 +70,5 @@ TEMPLATE_DIRS = (
     BASE_DIR+"/templates",
 )
 
+# Import external settings files
 from db import DATABASES
-

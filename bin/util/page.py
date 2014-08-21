@@ -9,7 +9,7 @@ from tabs  import format_tabs, format_doc
 from files import read_input, read_text, write_file, is_writable
 from domain import domain_directory
 from log    import append_log
-from app.settings import DOC_ROOT
+from settings import DOC_ROOT
 
 
 # Log the document hits

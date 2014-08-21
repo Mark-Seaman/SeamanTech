@@ -3,7 +3,7 @@ from os.path        import dirname,join
 
 from list           import split_lines,join_lines
 from files          import list_files, read_text, do_command
-from app.settings   import SCRIPTS_DIR
+from settings   import SCRIPTS_DIR
 
 
 #-----------------------------------------------------------------------------
