@@ -5,5 +5,5 @@
 #   svr-do hostname
 #   svr-do env
 
-ssh $ph ". impact/bin/project > /dev/null && $*"
+ssh $ph ". ~/Projects/seamantech/bin/project > /dev/null && $*"
 
