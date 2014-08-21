@@ -27,8 +27,8 @@ def render(request,template,data):
 def ip(request):
     if request.META['REMOTE_ADDR']=='127.0.0.1':
         return request.META['REMOTE_ADDR']
-    return request.META['HTTP_X_FORWARDED_FOR']
-
+    #return request.META['HTTP_X_FORWARDED_FOR']
+    return 'None'
 
 # Name of requesting user
 def user(request):
@@ -202,9 +202,3 @@ def illegal(request):
     user = str(request.user)
     text = user+format_doc(title)%ip(request)
     return render(request, 'doc.html', {'title': title, 'text': text})
-
-
-# Check the IP address for the request
-def ip_ok(request):
-    valid = [ '108.59.4.75', '50.134.243.56', '127.0.0.1' ]
-    return ip(request) in valid
