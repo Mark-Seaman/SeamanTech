@@ -6,6 +6,10 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns(
     '',
 
+    # login
+    (r'^login', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),  
+    (r'^logout', 'app.views.logout_view'),
+
     # doc
     url(r'^',         include('doc.urls')),
 
@@ -14,8 +18,6 @@ urlpatterns = patterns(
     url(r'^time/',    include('task.time_urls')),
 
     # other
-    (r'^login', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),  
-    (r'^logout', 'app.views.logout_view'),
 
     url(r'^home$', 'app.views.home', name='/'),
     url(r'^user$', 'app.views.user', name='user'),
