@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Create a tabbed view of a user document
 
-from os         import chdir,environ
+from os         import chdir
 from sys        import argv
 from os.path    import join,exists
 from re         import compile, IGNORECASE, DOTALL

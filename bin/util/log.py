@@ -1,16 +1,16 @@
 # Read and write a system log file
 
-from os import environ,remove
+from os import remove
 from os.path import join,dirname
 from datetime import datetime
 
 from files import read_text,list_files
-from app.settings import BASE_DIR
+from app.settings import LOG_DIR
 
 
 # Setup the file name
 def log_file(logFile):
-    return join(dirname(BASE_DIR), 'logs', logFile+'.log')
+    return join(LOG_DIR, logFile+'.log')
 
 
 # Log the page hit in page.log  (time, ip, user, page, doc) 

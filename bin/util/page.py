@@ -1,6 +1,6 @@
 
 from datetime   import datetime
-from os         import system,environ,chdir,getcwd
+from os         import system,chdir,getcwd
 from os.path    import isfile, isdir, exists, join
 from re         import compile, IGNORECASE, DOTALL
 
@@ -9,6 +9,7 @@ from tabs  import format_tabs, format_doc
 from files import read_input, read_text, write_file, is_writable
 from domain import domain_directory
 from log    import append_log
+from app.settings import DOC_ROOT
 
 
 # Log the document hits
@@ -25,7 +26,7 @@ def doc_path(host,user,path):
     else:
         doc = user+'/'+path
     log_page('path '+doc)
-    return environ['pd']+'/'+doc
+    return join(DOC_ROOT,doc)
 
 
 # Return the redirect page (after looking for Public & Private doc)

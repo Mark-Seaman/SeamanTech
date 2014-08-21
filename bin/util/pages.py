@@ -2,7 +2,7 @@
 # Run a python script to test support center web pages
 
 from os.path  import join,exists
-from os import system,environ,chdir,mkdir
+from os import system,chdir,mkdir
 from platform import node
 from subprocess import Popen,PIPE
 from time import sleep

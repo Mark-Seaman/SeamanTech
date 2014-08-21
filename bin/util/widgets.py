@@ -1,9 +1,9 @@
-from random     import choice
-from os.path    import dirname,join
-from os         import environ
+from random         import choice
+from os.path        import dirname,join
 
-from list   import split_lines,join_lines
-from files  import list_files, read_text, do_command
+from list           import split_lines,join_lines
+from files          import list_files, read_text, do_command
+from app.settings   import SCRIPTS_DIR
 
 
 #-----------------------------------------------------------------------------
@@ -69,7 +69,7 @@ def command_name(doc):
     doc = doc[9:-2]
     doc = doc.split('/')
     doc = '/'.join(doc[:1]) + ' ' + ' '.join(doc[1:])
-    return environ['p']+"/bin/scripts/"+doc
+    return join(SCRIPTS_DIR,doc)
 
 # Replace a single include
 def replace_scripts (line):

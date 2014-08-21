@@ -1,18 +1,19 @@
 
 from datetime   import datetime
-from os         import system,environ
+from os         import system
 from os.path    import isfile, exists,join
 from re         import compile, IGNORECASE, DOTALL
 
 from wiki  import *
 from tabs  import format_tabs, format_doc
 from files import read_input, read_text, write_file, is_writable
+from app.settings import DOC_ROOT
 
 
 # Read the domain mapping from a file
 def domain_map():
     map = {}
-    for d in open(join(environ['pd'],'Domains')).read().split('\n'):
+    for d in open(join(DOC_ROOT,'Domains')).read().split('\n'):
         d = d.split(' ')
         if len(d)==2:
             map[d[0]] = d[1]
@@ -55,7 +56,7 @@ def redirect_path(doc):
 # lookup the path for the doc for this url
 def map_doc_path(url):
     doc = doc_path(url.split('/'))
-    return join(environ['pd'], doc)
+    return join(DOC_ROOT, doc)
 
 
 # Either format the doc or return the redirect page

@@ -1,5 +1,4 @@
 # from datetime   import datetime
-# from os         import system,environ
 # from os.path    import isfile, exists,join
 # from re         import compile, IGNORECASE, DOTALL
 # from random     import choice
@@ -7,18 +6,19 @@
 
 
 from sys        import argv, stdin
+from os.path import join,exists,basename
 from os.path    import exists, join, isfile
-from os         import environ,system
-from util.tabs  import format_doc, format_tabs
-from util.wiki  import convert_html
-from util.files import read_input, read_text, read_file, write_file
+from os         import system
+
+from tabs  import format_doc, format_tabs
+from wiki  import convert_html
+from files import read_input, read_text, read_file, write_file, do_command, list_files, list_dirs
+from app.settings import DOC_ROOT
+
 
 #-----------------------------------------------------------------------------
 # Add ins
 
-from os.path import join,exists,basename
-from os      import environ
-from files   import do_command,list_files,list_dirs
 
 # Create links for each item in the folder
 def app_links(files):
@@ -48,7 +48,7 @@ def include_items(text,d):
 
 # Create wiki text for the index page
 def index_text(doc):
-    d = join(environ['pd'],doc)
+    d = join(DOC_ROOT,doc)
     text = read_index(join(d,'.index')).split('\n')
     text = include_dirs(text,d)
     #print 'include ',d
@@ -61,7 +61,7 @@ def index_text(doc):
 
 # Convert a url to a directory
 def doc_path(doc):
-    return environ['pd']+'/'+doc
+    return join(DOC_ROOT, doc)
 
 
 # Either format the doc or return the redirect page

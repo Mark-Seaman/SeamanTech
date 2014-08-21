@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Test control program
 
-from os         import system, environ, chdir
+from os         import system, chdir
 from os.path    import join
 from argparse   import ArgumentParser
 

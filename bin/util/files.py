@@ -1,4 +1,4 @@
-from os         import remove, path, getcwd, system, listdir, mkdir, environ, walk, access, W_OK
+from os         import remove, path, getcwd, system, listdir, mkdir, walk, access, W_OK
 from os.path    import isfile, isdir, join, dirname, exists, getsize, getmtime
 from sys        import stdin
 from subprocess import Popen,PIPE
