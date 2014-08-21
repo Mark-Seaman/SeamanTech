@@ -1,3 +1,6 @@
+app/app/db_development.py
+app/app/db_production.py
+app/app/db.py
 app/app/__init__.py
 app/app/settings.py
 app/app/urls.py
@@ -60,7 +63,12 @@ bin/app-models
 bin/cache
 bin/commit
 bin/create
+bin/db-create
+bin/db-destroy
+bin/db-list
 bin/db-reset
+bin/db-set-development
+bin/db-set-production
 bin/db-sync
 bin/diff-gen
 bin/diff-test
