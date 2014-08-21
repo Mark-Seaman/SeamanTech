@@ -1,15 +1,22 @@
 #!/bin/bash
 # Start working on the simple project
 
+# Set these environmental variables for PostgresDB
+export PGHOST=shrinking-world.cqfqiornb6z5.us-west-2.rds.amazonaws.com
+export PGPORT=5432
+export PGDATABASE=SeamanTech_production
+export PGUSER=sws
+export PGPASSFILE=$HOME/base-bin/pgpass.conf
+
 # Vars
 export p=~/Projects/seamantech
-export ph=ubuntu@seaman-sws
+export ph=$sws
 export port=8014
 export pa=$p/app
 export pb=$p/bin
 export pd=$p/doc
 export pt=$p/test
-export x=~/Projects/impact
+export x=~/Projects/thumper
 
 # Aliases
 alias proot="cd $p"
@@ -41,10 +48,14 @@ cd $p
 cat $p/bin/welcome
 
 # Use virtualenv
-[ -f $p/env/bin/activate ] && . $p/env/bin/activate
+[ 'seaman-chute'  == `hostname` ] &&  . $p/env/bin/activate
+[ 'seaman-hammer' == `hostname` ] &&  . $p/env/bin/activate
+[ 'seaman-ultra'  == `hostname` ] &&  . $p/env/bin/activate
+[ `hostname` == seaman-sws ] && . $HOME/env_2.7/bin/activate
 echo "python = `which python`"
 echo 
 path
+
 
 # Status
 git status
