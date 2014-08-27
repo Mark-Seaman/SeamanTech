@@ -2,6 +2,6 @@
 # Search for strings in source code
 
 cd $p
-grep $* `src`
+grep -s $* `src`
 
 

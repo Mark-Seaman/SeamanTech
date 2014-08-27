@@ -3,4 +3,5 @@ diff bin/src /home/seaman/Projects/jack-hammer/bin/src
 diff bin/var-clear /home/seaman/Projects/jack-hammer/bin/var-clear
 diff bin/welcome /home/seaman/Projects/jack-hammer/bin/welcome
 diff test/docs.tst /home/seaman/Projects/jack-hammer/test/docs.tst
+diff test/src.tst /home/seaman/Projects/jack-hammer/test/src.tst
 diff test/update.tst /home/seaman/Projects/jack-hammer/test/update.tst
