@@ -124,6 +124,7 @@ bin/rmas
 bin/rs
 bin/run
 bin/run-svr
+bin/seamantech.conf
 bin/search
 bin/show
 bin/src
@@ -134,6 +135,7 @@ bin/svr-do
 bin/svr-hosts
 bin/svr-restart
 bin/svr-update
+bin/svr-web
 bin/tdiff
 bin/te
 bin/tfail
@@ -160,6 +162,7 @@ bin/util/local_settings.py
 bin/util/log.py
 bin/util/page.py
 bin/util/pages.py
+bin/util/settings.py
 bin/util/table.py
 bin/util/tabs.py
 bin/util/test_table.py

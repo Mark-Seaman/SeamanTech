@@ -94,6 +94,7 @@ rmas
 rs
 run
 run-svr
+seamantech.conf
 search
 show
 src
@@ -104,6 +105,7 @@ svr-do
 svr-hosts
 svr-restart
 svr-update
+svr-web
 te
 tfail
 tfix
@@ -146,6 +148,7 @@ bin
 include
 lib
 local
+man
 
 Projects/seamantech/logs:
 docs.log
