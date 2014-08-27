@@ -180,7 +180,5 @@ scripts.correct
 scripts.tst
 src.correct
 src.tst
-tablerw.correct
-tablerw.tst
 update.correct
 update.tst

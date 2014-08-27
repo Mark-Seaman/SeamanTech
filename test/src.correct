@@ -189,5 +189,4 @@ test/python.tst
 test/records.tst
 test/scripts.tst
 test/src.tst
-test/tablerw.tst
 test/update.tst
