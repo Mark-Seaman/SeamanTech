@@ -7,10 +7,10 @@ WSGIPythonPath /home/ubuntu/Projects/seamantech/app:/home/ubuntu/env_2.7/lib/pyt
 <VirtualHost *:80>
         ServerAdmin mark.b.seaman@gmail.com
         ServerName seamantech.com
-        #ServerAlias www.mybrainonline.com
-        #ServerAlias mybrainonline.com
-        #ServerAlias www.mybookonline.com
-        #ServerAlias mybookonline.com
+        ServerAlias www.mybrainonline.com
+        ServerAlias mybrainonline.com
+        ServerAlias www.mybookonline.com
+        ServerAlias mybookonline.com
 
 #        Alias /robots.txt /home/ubuntu/Projects/seamantech/static/robots.txt
 #        Alias /favicon.ico /home/ubuntu/Projects/seamantech/static/favicon.ico
