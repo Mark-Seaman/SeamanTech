@@ -10,13 +10,31 @@ WSGIPythonPath /home/ubuntu/Projects/seamantech/app:/home/ubuntu/env_2.7/lib/pyt
 
         # Aliases for this server application
         ServerName seamantech.com
-        ServerAlias www.mybrainonline.com
-        ServerAlias mybrainonline.com
-        ServerAlias www.mybookonline.com
-        ServerAlias mybookonline.com
+        ServerAlias acttolearn.org
+        ServerAlias agilebusiness.us
+        ServerAlias dr-prof.com
         ServerAlias exteriorbrain.com
+        ServerAlias fightbitrot.com
+        ServerAlias gallery.shrinking-world.org
+        ServerAlias harborwalk.shrinking-world.org
+        ServerAlias how-to-automate.com
+        ServerAlias markseaman.org
+        ServerAlias my-book-live.com
+        ServerAlias my-book-online.com
+        ServerAlias mybookonline.org
+        ServerAlias myslideslive.com
+        ServerAlias myslidesonline.com
+        ServerAlias myslidesonline.org
+        ServerAlias ourinwardjourney.com
+        ServerAlias patterns.shrinking-world.org
+        ServerAlias seamansguide.com
         ServerAlias seamanslog.com
         ServerAlias spiritual-things.org
+        ServerAlias super.shrinking-world.org
+        ServerAlias the-core-idea.com
+        ServerAlias the-very-idea.us
+        ServerAlias world-class-software.com
+
 
 #        Alias /robots.txt /home/ubuntu/Projects/seamantech/static/robots.txt
 #        Alias /favicon.ico /home/ubuntu/Projects/seamantech/static/favicon.ico
