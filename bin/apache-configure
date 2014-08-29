@@ -29,6 +29,7 @@ WSGIPythonPath /home/ubuntu/Projects/seamantech/app:/home/ubuntu/env_2.7/lib/pyt
         ServerAlias patterns.shrinking-world.org
         ServerAlias seamansguide.com
         ServerAlias seamanslog.com
+        ServerAlias shrinking-world.org
         ServerAlias spiritual-things.org
         ServerAlias super.shrinking-world.org
         ServerAlias the-core-idea.com
@@ -36,21 +37,21 @@ WSGIPythonPath /home/ubuntu/Projects/seamantech/app:/home/ubuntu/env_2.7/lib/pyt
         ServerAlias world-class-software.com
 
 
-#        Alias /robots.txt /home/ubuntu/Projects/seamantech/static/robots.txt
-#        Alias /favicon.ico /home/ubuntu/Projects/seamantech/static/favicon.ico
+        Alias /robots.txt /home/ubuntu/Projects/seamantech/static/robots.txt
+        Alias /favicon.ico /home/ubuntu/Projects/seamantech/static/favicon.ico
 
-#        Alias /media/ /home/ubuntu/Projects/seamantech/app/media/
+        Alias /media/ /home/ubuntu/Projects/seamantech/app/media/
         Alias /static/ /home/ubuntu/Projects/seamantech/app/static/
 
-#        <Directory /home/ubuntu/Projects/seamantech/app/media/>
-#            Order deny,allow
-#            Allow from all
-#        </Directory>
+        <Directory /home/ubuntu/Projects/seamantech/app/media/>
+            Order deny,allow
+            Allow from all
+        </Directory>
 
-#        <Directory /home/ubuntu/Projects/seamantech/app/static/>
-#            Order deny,allow
-#            Allow from all
-#        </Directory>
+        <Directory /home/ubuntu/Projects/seamantech/app/static/>
+            Order deny,allow
+            Allow from all
+        </Directory>
 
         WSGIDaemonProcess seamantech user=ubuntu group=ubuntu processes=4 threads=2 python-path="/home/ubuntu/Projects/seamantech/app:/home/ubuntu/env_2.7/lib/python2.7/site-packages"
         WSGIScriptAlias / /home/ubuntu/Projects/seamantech/app/app/wsgi.py
