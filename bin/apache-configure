@@ -10,6 +10,7 @@ WSGIPythonPath /home/ubuntu/Projects/seamantech/app:/home/ubuntu/env_2.7/lib/pyt
 
         # Aliases for this server application
         ServerName seamantech.com
+        ServerAlias act2learn.org
         ServerAlias acttolearn.org
         ServerAlias agilebusiness.us
         ServerAlias dr-prof.com
@@ -29,6 +30,7 @@ WSGIPythonPath /home/ubuntu/Projects/seamantech/app:/home/ubuntu/env_2.7/lib/pyt
         ServerAlias patterns.shrinking-world.org
         ServerAlias seamansguide.com
         ServerAlias seamanslog.com
+        ServerAlias seaman-tech.com
         ServerAlias shrinking-world.org
         ServerAlias spiritual-things.org
         ServerAlias super.shrinking-world.org
