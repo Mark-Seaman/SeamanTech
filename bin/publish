@@ -1,0 +1,5 @@
+#!/bin/bash
+# Publish new docs to seaman-sws
+
+ssh ubuntu@shrinking-world.org hostname&&pwd&&cd ~/Projects/seamantech&&git pull
+
