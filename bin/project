@@ -10,6 +10,7 @@ export PGPASSFILE=$HOME/base-bin/pgpass.conf
 
 # Vars
 export p=~/Projects/seamantech
+export gh=Shrinking-World/Company
 export ph=$sws
 export port=8014
 export pa=$p/app
