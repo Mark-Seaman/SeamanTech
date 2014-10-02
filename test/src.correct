@@ -61,6 +61,7 @@ bin/apache-restart
 bin/app-code
 bin/app-models
 bin/cache
+bin/chrome
 bin/commit
 bin/create
 bin/db-create
@@ -86,11 +87,13 @@ bin/e
 bin/edit-source
 bin/elapsed
 bin/filter-path
+bin/github
 bin/impact-data
 bin/impact-urls
 bin/impact-views
 bin/import-docs
 bin/install.pip
+bin/issues
 bin/json-load
 bin/json-load-doc
 bin/json-save
@@ -178,6 +181,7 @@ bin/var-save
 bin/var-set
 bin/var-write
 bin/welcome
+bin/wiki
 test/content.tst
 test/control.tst
 test/data.tst

@@ -34,6 +34,7 @@ apache-restart
 app-code
 app-models
 cache
+chrome
 commit
 create
 db-create
@@ -58,11 +59,13 @@ e
 edit-source
 elapsed
 filter-path
+github
 impact-data
 impact-urls
 impact-views
 import-docs
 install.pip
+issues
 json-load
 json-load-doc
 json-save
@@ -128,6 +131,7 @@ var-save
 var-set
 var-write
 welcome
+wiki
 
 Projects/seamantech/doc:
 Anonymous
