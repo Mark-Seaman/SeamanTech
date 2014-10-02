@@ -18,6 +18,7 @@ data
 doc
 generate
 manage.py
+media
 note
 scripts
 static
@@ -88,6 +89,7 @@ page-redirect
 page-show
 pi
 project
+publish
 range
 rbg
 rmas

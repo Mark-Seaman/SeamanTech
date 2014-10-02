@@ -118,6 +118,7 @@ bin/page-redirect
 bin/page-show
 bin/pi
 bin/project
+bin/publish
 bin/range
 bin/rbg
 bin/rmas
