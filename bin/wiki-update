@@ -1,0 +1,8 @@
+#!/bin/bash
+# Push all the changes from this directory
+
+git add -A .         
+git commit -m"Dev machine update of files `hostname`"   
+
+git pull            &&
+git push
