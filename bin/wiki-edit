@@ -4,13 +4,24 @@
 from os      import environ,listdir,system
 from os.path import join,basename
 from shutil  import copy
+from re      import sub
 
+
+# Apply a stack of substitutions
+def map_markdown_to_muse(line):
+    line = sub(r'^\* ', r' * ', line)
+    line = sub(r'\*\*', r'**', line)
+    line = sub(r'^# ',  '* ', line)
+    line = sub(r'^## ', '** ', line)
+    return line
 
 # Convert one file to muse
 def markdown_to_muse(f1,f2):
     title = basename(f1.replace('.md',''))
     title =  '* %s *     -*- muse -*-\n\n'%title
     text = open(f1).read().replace('\r','')
+    text = map(map_markdown_to_muse, text.split('\n'))
+    text = '\n'.join(text)
     open(f2,'wt').write(title+text)
     
 # Convert the markdown files to muse

@@ -5,11 +5,19 @@
 from os      import environ,listdir,system
 from os.path import join
 from shutil  import copy
+from re      import sub
 
+
+def map_muse_to_markdown(line):
+    line = sub(r'^\* ', r'# ', line)
+    line = sub(r'^\*\* ', r'## ', line)
+    line = sub(r'^\s*\* ', r'* ', line)
+    return line
 
 # Convert one file to markdown
 def muse_to_markdown(f1,f2):
     text = open(f1).read().split('\n')[2:]
+    text = map(map_muse_to_markdown, text)
     open(f2,'wt').write('\r\n'.join(text))
 
 # Convert muse files to markdown
