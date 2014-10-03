@@ -25,5 +25,6 @@ def convert_to_muse(d1,d2):
 d1 = environ['p']+'/wiki/markdown'
 d2 = environ['p']+'/wiki/muse'
 
+system ('cd $p/wiki/markdown; git pull')
 convert_to_muse(d1,d2)
 system ('e '+d2)
