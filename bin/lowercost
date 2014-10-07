@@ -1,0 +1,13 @@
+#!/bin/bash
+# Create a slide show for lower cost
+
+project=Lower-costs 
+source=~/Projects/seamantech/doc/Public/ShrinkingWorld/$project
+slides=/home/seaman/Documents/Slides/text/$project.txt
+
+cp $source $slides
+ls -l $source $slides
+cat $slides
+
+slide-build $project
+slide-view  $project
