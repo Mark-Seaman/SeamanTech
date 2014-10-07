@@ -1,0 +1,5 @@
+#!/bin/bash
+# Setup a new wiki for a project
+
+mkdir -p $p/wiki $p/wiki/muse
+git clone git@github.com:$gh.wiki $p/wiki/markdown
