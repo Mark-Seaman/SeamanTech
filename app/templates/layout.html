@@ -20,7 +20,7 @@
       -->
 
     {% block banner %}
-    <div class='header'>
+    <div class="header">
 
         {% if site_title %}
         <h1>{{ site_title }}</h1>
@@ -30,23 +30,32 @@
 
 
         {% block user %} 
-        <div style='float:right'>
+        <div class="user">
+
           {% if user.is_authenticated and user.is_staff %}
-          Logged in as,
-          <strong>{% firstof user.first_name user.username %}</strong>.
-          <!-- <a href="/password_change">Change password</a> -->
-          <a href="/logout">Log out</a>
+
+              <p id="hpara">
+                Logged in as,
+                <strong>{% firstof user.first_name user.username %}</strong>.
+                <!-- <a href="/password_change">Change password</a> -->
+                <a id="hpara" href="/logout">Log out</a>
+              </p>
+
           {% else %}
-          You are not logged in.
-          <p><a href='/login/?next=/'>Login</a></p>
+
+              <p id="hpara">You are not logged in.
+                <a id="hlink" href="/login/?next=/"><b>Login</b></a>
+              </p>
+    
           {% endif %}
+
         </div>
         {% endblock %}
 
 
         {% block navbar %}
         <p>
-          <a  class='hlink' href="/">Home</a>
+          <a  id="hlink" href="/"><b>Home</b></a>
         </p>
         {% endblock %}
 
@@ -54,11 +63,16 @@
     {% endblock %}
 
 
-    <div class='page'>
+    <div class="page">
       <div style="margin:3em">
         {% block content %} 
         {% endblock %}
       </div>
+    </div>
+
+    <div style="margin:3em">
+      {% block footer %} 
+      {% endblock %}
     </div>
 
   </body>

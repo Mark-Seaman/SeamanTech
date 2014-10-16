@@ -1,0 +1,5 @@
+#!/bin/bash
+# Edit the app files
+
+e $pa/doc $pa/templates $pa/static
+
