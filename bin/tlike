@@ -1,17 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env python
 # Accept the currect results as the correct answer
 
-# Choose the correct directory
-cd $p
-[[ -d test ]] && cd test
-f=${1/\.tst/}   
-echo Accept results from $f.tst
-cp $f.out $f.correct
-rm $f.diff
-touch $f.diff
-
-cd $pb
-python <<EOF
+from sys import argv
 from util.systest import like
-like ("$f")
-EOF
+
+like (argv[1])
