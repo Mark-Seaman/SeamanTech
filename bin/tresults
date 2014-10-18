@@ -1,18 +1,7 @@
-#!/bin/bash
-# Compare the last output with the correct output
+#!/usr/bin/env python
+# Accept the currect results as the correct answer
 
-# Go to directory
-cd $p/test
 
-# Loop over all of the tests
-{
-for f in *.tst
-do 
-    x=`tdiff $f`
-    [[ ! -z "$x" ]]                                             &&
-    echo '----------------------------------------------------' &&
-    echo "                       $f                           " &&
-    echo '----------------------------------------------------' &&
-    tdiff $f
-done
-} | less
+from util.systest import tests_results
+
+tests_results ()
