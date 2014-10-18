@@ -9,3 +9,9 @@ echo Accept results from $f.tst
 cp $f.out $f.correct
 rm $f.diff
 touch $f.diff
+
+cd $pb
+python <<EOF
+from util.systest import like
+like ("$f")
+EOF

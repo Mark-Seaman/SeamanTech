@@ -14,6 +14,7 @@ from diff  import diff_string
 
 # Run the requested test as a shell script
 def run(testname):
+    print 'Running %-15s'%testname, tname(testname)+'.tst'
     text = do_command(tname(testname)+'.tst')
     save(tname(testname)+'.out', text)
     diff(testname)
@@ -76,37 +77,24 @@ def get_code(testname):
 # Enumerate Tests
 def tests():
     return '''
-company
-controller
+content
 control
 data
 docs
-drivers
-faker
 files
 git
-impact
 mkcode
-models
-pil
 projects
 python
 records
-redis
 scripts
-send
-shrinkingworld
 src
-testdata
-tester
-uidata
 update
            '''.split('\n')[1:-1]
 
 # Run all Tests
 def run_tests():
     for t in tests():
-        print 'Running ',t+'.tst ...',
         run (t)
 
 # Show Tests Results
