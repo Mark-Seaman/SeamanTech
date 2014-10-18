@@ -84,10 +84,13 @@ bin/doc-redirect
 bin/doc-show
 bin/doc-tricks
 bin/e
+bin/eapp
 bin/edit-source
 bin/elapsed
 bin/filter-path
+bin/gc
 bin/github
+bin/git-show
 bin/impact-data
 bin/impact-urls
 bin/impact-views
@@ -100,6 +103,7 @@ bin/json-save
 bin/json-save-doc
 bin/json-show
 bin/lc
+bin/lowercost
 bin/mkaddtype
 bin/mkcode
 bin/mkcode-update
@@ -157,6 +161,7 @@ bin/tshow
 bin/tst
 bin/util/control.py
 bin/util/date.py
+bin/util/diff.py
 bin/util/doc.py
 bin/util/domain.py
 bin/util/files.py
@@ -167,8 +172,12 @@ bin/util/log.py
 bin/util/page.py
 bin/util/pages.py
 bin/util/settings.py
+bin/util/store.py
+bin/util/systest.py
 bin/util/table.py
 bin/util/tabs.py
+bin/util/test_redis.py
+bin/util/test_store.py
 bin/util/test_table.py
 bin/util/vars.py
 bin/util/widgets.py
@@ -180,8 +189,13 @@ bin/var-read
 bin/var-save
 bin/var-set
 bin/var-write
+bin/w
 bin/welcome
 bin/wiki
+bin/wiki-edit
+bin/wiki-save
+bin/wiki-setup
+bin/wiki-update
 test/content.tst
 test/control.tst
 test/data.tst
