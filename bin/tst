@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env python
 # Run all system tests
 
-rs run_tests
+from util.systest import run_tests
+
+run_tests()
