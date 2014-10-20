@@ -88,6 +88,6 @@ page-get localhost:8052 test TestIndex
 
 
 # Clean up after test
-rm $pd/Public/test/*
+rm -f $pd/Public/test/*
 
 } | filter-path
