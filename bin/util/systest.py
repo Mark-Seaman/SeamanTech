@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # Run all of the system tests
 
-from os.path    import join
+from os.path    import join, isfile, splitext, basename
 from os         import system, environ
+from glob       import glob
 
 from files import do_command, write_file, read_file
 from store import save, recall
@@ -76,21 +77,10 @@ def get_code(testname):
 
 # Enumerate Tests
 def tests():
-    return '''
-content
-control
-data
-docs
-files
-git
-mkcode
-projects
-python
-records
-scripts
-src
-update
-           '''.split('\n')[1:-1]
+    files = glob(join(environ['pt'],"*.tst"))
+    files = [splitext(basename(f))[0] for f in filter(isfile, files)]
+    return sorted(files)
+
 
 # Run all Tests
 def run_tests():
