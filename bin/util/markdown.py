@@ -8,6 +8,21 @@ from re      import sub
 
 
 #-----------------------------------------------------------------------------
+# Replacer
+
+# Replace one pattern with its substitute string
+def replacer(replacements,text):
+    results = []
+    for line in text.split('\n'):
+        for r in replacements:
+            pattern,substitute = r
+            line = sub(pattern,substitute,line)
+            print "replacer: ",line
+        results.append(line)
+    return '\n'.join(results)
+
+
+#-----------------------------------------------------------------------------
 # From Markdown
 
 # Apply a stack of substitutions
