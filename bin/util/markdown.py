@@ -17,17 +17,23 @@ def replacer(replacements,text):
         for r in replacements:
             pattern,substitute = r
             line = sub(pattern,substitute,line)
-            print "replacer: ",line
+            #print "replacer: ",line
         results.append(line)
     return '\n'.join(results)
 
 
 #-----------------------------------------------------------------------------
-# From Markdown
+# From Markdown to Muse
+
+markdown_link = r'\[([\w ]+)\]\(([\w ]+)\)'
+markdown_subs = r'[[\2][\1]]'
+
+markdown_link_repl   = (markdown_link,markdown_subs)
+markdown_bullet_repl = (r'^\* ', r' * ')
 
 # Apply a stack of substitutions
 def map_markdown_to_muse(line):
-    line = sub(r'^\* ', r' * ', line)
+    line = replacer((markdown_link_repl,markdown_bullet_repl),line)
     line = sub(r'\*\*', r'**', line)
     line = sub(r'^# ',  '* ', line)
     line = sub(r'^## ', '** ', line)
@@ -57,11 +63,19 @@ def convert_to_muse(d1,d2):
             f1 = join(d1,f)
             f2 = join(d2,f.replace('.md',''))
             markdown_to_muse(f1,f2)
+
 #-----------------------------------------------------------------------------
-# To Markdown
+# To Markdown from Muse
+
+muse_link     = r'\[\[([\w ]+)\]\[([\w ]+)\]\]'
+muse_subs     = r'[\2](\1)'
+
+muse_link_repl     = (muse_link,muse_subs)
+
 
 # Convert one muse line
 def map_muse_to_markdown(line):
+    line = replacer((muse_link_repl,),line)
     line = sub(r'^\* ', r'# ', line)
     line = sub(r'^\*\* ', r'## ', line)
     line = sub(r'^\s*\* ', r'* ', line)

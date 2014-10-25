@@ -1,5 +1,5 @@
 #!/bin/bash
 # Run the test case under development
 
-nosetests $p/bin/util/test_markdown.py
+nosetests -s $p/bin/util/test_markdown.py
 
