@@ -64,17 +64,17 @@ def same (s1,s2):
         assert(False) 
 
 
-# Try to substitute text with a REGEX
-def substitute_test():
-    same (sub(markdown_link, markdown_subs, markdown_text), muse_text)
-    same (sub(muse_link, muse_subs, muse_text), markdown_text)
+# # Try to substitute text with a REGEX
+# def substitute_test():
+#     same (sub(markdown_link, markdown_subs, markdown_text), muse_text)
+#     same (sub(muse_link, muse_subs, muse_text), markdown_text)
 
  
-# Convert a line to muse and back to markdown using the same replacer   
-def round_trip_test():
-    replacements = (muse_repl,markdown_repl)
-    assert (replacer(replacements,muse_text) == muse_text)
-    assert (replacer(replacements,markdown_text) != markdown_text)
+# # Convert a line to muse and back to markdown using the same replacer   
+# def round_trip_test():
+#     replacements = (muse_repl,markdown_repl)
+#     assert (replacer(replacements,muse_text) == muse_text)
+#     assert (replacer(replacements,markdown_text) != markdown_text)
 
 
 # Replacement tester
