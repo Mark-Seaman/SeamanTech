@@ -72,3 +72,13 @@ TEMPLATE_DIRS = (
 
 # Import external settings files
 from db import DATABASES
+
+# Amazon AWS SES Email Service
+EMAIL_BACKEND = 'django_ses.SESBackend'
+AWS_SES_ACCESS_KEY_ID = 'AKIAJNEWSJNXFHEWAZ4A'
+AWS_SES_SECRET_ACCESS_KEY = '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'
+AWS_SES_REGION_NAME = 'us-west-2'
+AWS_SES_REGION_ENDPOINT = 'email.us-west-2.amazonaws.com'
+AWS_SES_AUTO_THROTTLE = 0.5 # (default; safety factor applied to rate limit)
+                            # Note: our current limit for SES is 5 emails per second
+ 

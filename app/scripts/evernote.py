@@ -1,9 +1,6 @@
 # Send a message to a user
 from django.core.mail import send_mail
 from django.core      import serializers
-from os               import environ
-from os.path          import exists
-from sys              import argv
 
 
 # Print the message
@@ -47,18 +44,15 @@ def send(emailFrom, emailTo, title, body):
 
 # Run the main job
 def run():
-
+    from sys import argv
     if len(argv)>3:
-        path = environ['br']+'/'+argv[3]
-        if exists(path):
-            emailFrom, emailTo, title, body = read_message(path)
-            if send(emailFrom, emailTo, title, body):
-                print 'successfully sent message'
-            else:
-                print 'failed to send message'
+        path = argv[3]
+        emailFrom, emailTo, title, body = read_message(path)
+        if send(emailFrom, emailTo, title, body):
+            print 'successfully sent message'
         else:
-            print 'File not found,', path
+            print 'failed to send message'
     else:
-        print 'usage: rs brain topic'
+        print 'usage: rs evernote file-path'
 
     exit(0)
