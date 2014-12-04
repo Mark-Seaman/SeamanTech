@@ -15,7 +15,7 @@ def preview_message(emailFrom, emailTo, title, body_lines):
 
 
 # Get the title from the message
-def get_title(message):
+def get_title(title):
     title = title.replace('* ','')
     title = title.replace(' *','')
     title = title.replace ('-*-muse-*-', '')

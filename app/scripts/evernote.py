@@ -12,7 +12,7 @@ def preview_message(emailFrom, emailTo, title, body_lines):
 
 
 # Get the title from the message
-def get_title(message):
+def get_title(title):
     title = title.replace('* ','')
     title = title.replace(' *','')
     title = title.replace ('-*-muse-*-', '')
@@ -27,7 +27,7 @@ def read_message(path):
     emailTo   = 'mdseaman.c125c@m.evernote.com'
     message   = open(path).read().split('\n')
     title     = get_title(message[0])
-    body      = '\n'.join(message[1:])
+    body      = '\n'.join(message[1:]).replace('**','')
     preview_message(emailFrom, emailTo, title, message[1:])
     return [ emailFrom, emailTo, title, body ]
 
