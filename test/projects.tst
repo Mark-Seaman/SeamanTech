@@ -1,7 +1,10 @@
 #!/bin/bash
 # Projects list
 
-[ `hostname` == seaman-sws ] && cat $pt/projects.correct && exit 0
+h=`hostname`
+[ "$h" != "seaman-hammer" ] && 
+tcorrect $pt/projects && 
+exit 0
 
 ls ~/Projects
 

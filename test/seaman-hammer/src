@@ -232,7 +232,6 @@ test/markdown.tst
 test/mkcode.tst
 test/pages.tst
 test/projects.tst
-test/python.tst
 test/records.tst
 test/redis.tst
 test/scripts.tst
