@@ -1,8 +1,11 @@
 #!/bin/bash
 # Update the source code
 
-[ `hostname` == seaman-sws ] && cat $pt/update.correct && exit 0
+[ `hostname` != seaman-sws ] && 
+doc-diff-all $jack src-jack 
 
-doc-diff-all $jack src-jack
+
+
+
 
 
