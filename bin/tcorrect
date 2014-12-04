@@ -2,6 +2,6 @@
 # Accept the currect results as the correct answer
 
 from sys import argv
-from util.systest import output
+from util.systest import correct
 
-print 'Test Output:', argv[1], output (argv[1])
+print correct (argv[1])

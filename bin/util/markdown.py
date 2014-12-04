@@ -17,34 +17,21 @@ def replacer(replacements,text):
         for r in replacements:
             pattern,substitute = r
             line = sub(pattern,substitute,line)
-            #print "replacer: ",line
+            print "replacer: ",line
         results.append(line)
     return '\n'.join(results)
 
 
 #-----------------------------------------------------------------------------
-# From Markdown to Muse
-
-markdown_link = r'\[([\w ]+)\]\(([\w ]+)\)'
-markdown_subs = r'[[\2][\1]]'
-
-markdown_link_repl       = (markdown_link,markdown_subs)
-markdown_bullet_repl     = (r'^\* ', r' * ')
-#markdown_bold_repl       = (r'\*\*', r'**')
-markdown_heading_repl    = (r'^# ',  '* ')
-markdown_subheading_repl = (r'^## ', '** ')
-
-markdown_replacements = (
-    markdown_link_repl,
-    markdown_bullet_repl,
-    #markdown_bold_repl,
-    markdown_heading_repl,
-    markdown_subheading_repl
-)
+# From Markdown
 
 # Apply a stack of substitutions
 def map_markdown_to_muse(line):
-    return replacer(markdown_replacements,line)
+    line = sub(r'^\* ', r' * ', line)
+    line = sub(r'\*\*', r'**', line)
+    line = sub(r'^# ',  '* ', line)
+    line = sub(r'^## ', '** ', line)
+    return line
 
 
 # Convert a text block
@@ -70,30 +57,15 @@ def convert_to_muse(d1,d2):
             f1 = join(d1,f)
             f2 = join(d2,f.replace('.md',''))
             markdown_to_muse(f1,f2)
-
 #-----------------------------------------------------------------------------
-# To Markdown from Muse
-
-muse_link     = r'\[\[([\w ]+)\]\[([\w ]+)\]\]'
-muse_subs     = r'[\2](\1)'
-
-muse_link_repl       = (muse_link,muse_subs)
-muse_heading_repl    = (r'^\* ', r'# ')
-muse_subheading_repl = (r'^\*\* ', r'## ')
-muse_bullet_repl     = (r'^ \* ', r'* ')
-#muse_bold_repl       = (r'\*\* ', r'** ')
-
-muse_replacements = (
-    muse_link_repl,
-    muse_heading_repl,
-    muse_subheading_repl,
-    muse_bullet_repl,
-    #muse_bold_repl,
-)
+# To Markdown
 
 # Convert one muse line
 def map_muse_to_markdown(line):
-    line = replacer(muse_replacements,line)
+    line = sub(r'^\* ', r'# ', line)
+    line = sub(r'^\*\* ', r'## ', line)
+    line = sub(r'^\s*\* ', r'* ', line)
+    #line = sub(r'\[\[(LinkText)\]\]', r'\[\[\2\]\]', line)
     return line
 
 

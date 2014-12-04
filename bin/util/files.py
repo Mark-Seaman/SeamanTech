@@ -2,9 +2,9 @@ from os         import remove, path, getcwd, system, listdir, mkdir, walk, acces
 from os.path    import isfile, isdir, join, dirname, exists, getsize, getmtime
 from sys        import stdin
 from subprocess import Popen,PIPE
-from glob import glob
-from json import dumps,loads
-from string import rstrip
+from glob       import glob
+from json       import dumps,loads
+from string     import rstrip
 
 
 # Check if this file is writable
@@ -53,6 +53,7 @@ def read_text(f):
 
 # Return the text from the file
 def write_text(filename, text, append=None):
+    create_directory(dirname(filename))
     f=open(filename, 'a' if append else 'w')
     f.write(text)
     f.close()

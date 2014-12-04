@@ -1,0 +1,123 @@
+
+Create files
+------------------
+test/TestDoc/missing
+
+Get files
+------------------
+No file found, Projects/seamantech/app/user_doc/Public/test/Missing
+None
+* Test User Home *
+This is a test page for the test user.
+**Tab 1**
+ This is some text
+**Tab 2**
+This is some more text
+
+None
+* Test Document *
+This is a test.
+
+None
+* Test User Home *
+This is a test page for the test user.
+**Tab 1**
+ This is some text
+**Tab 2**
+This is some more text
+
+None
+
+Redirect to Index
+------------------
+redirect: Public/test/Index
+test/Index
+redirect: test/Index
+
+Index
+------------------
+<br/> <h1>Test User Home</h1>
+<br/> This is a test page for the test user.
+<br/> <div ng-controller="TabbedViewCtrl">
+  <tabset ng-show="true">
+     <tab heading="Tab 1">
+        <div class="page">
+        <b>Tab 1</b>
+<br/>  This is some text
+<br/>         </div>
+     </tab>
+     <tab heading="Tab 2">
+        <div class="page">
+        <b>Tab 2</b>
+<br/> This is some more text
+<br/> 
+<br/> 
+<br/>         </div>
+     </tab>
+  </tabset>
+</div>
+
+<br/> <h1>Test User Home</h1>
+<br/> This is a test page for the test user.
+<br/> <div ng-controller="TabbedViewCtrl">
+  <tabset ng-show="true">
+     <tab heading="Tab 1">
+        <div class="page">
+        <b>Tab 1</b>
+<br/>  This is some text
+<br/>         </div>
+     </tab>
+     <tab heading="Tab 2">
+        <div class="page">
+        <b>Tab 2</b>
+<br/> This is some more text
+<br/> 
+<br/> 
+<br/>         </div>
+     </tab>
+  </tabset>
+</div>
+
+* Test User Home *
+This is a test page for the test user.
+**Tab 1**
+ This is some text
+**Tab 2**
+This is some more text
+
+
+Formatted output
+------------------
+<br/> <h1>Test Document</h1>
+<br/> This is a test.
+<br/> 
+<br/> 
+<br/> 
+<br/> <h1>Test Document</h1>
+<br/> This is a test.
+<br/> 
+<br/> 
+<br/> 
+
+Test missing file
+------------------
+redirect: Public/test/xxx/missing
+test/xxx/missing
+redirect: test/xxx/missing
+redirect: test/xxx/missing
+
+Private files
+------------------
+* Test Document *
+This is a test.
+
+
+Public/Private files
+---------------------
+* Test User Home *
+This is a test page for the test user.
+**Tab 1**
+ This is some text
+**Tab 2**
+This is some more text
+

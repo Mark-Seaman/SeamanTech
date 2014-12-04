@@ -1,0 +1,9 @@
+/home/seaman/Projects/seamantech/bin/util
+nosetests -v store_test.py
+util.store_test.redis_test ... ok
+util.store_test.redis_expiration_test ... ok
+util.store_test.redis_missing_test ... ok
+
+----------------------------------------------------------------------
+
+OK

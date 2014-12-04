@@ -1,0 +1,6 @@
+/home/seaman/Projects/seamantech/bin/util
+nosetests -v selenium_test.py
+
+----------------------------------------------------------------------
+
+OK

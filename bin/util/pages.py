@@ -10,25 +10,24 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 # Global vars
-browser = ''
 accept_all_pages = False
 
 
 # Get Support Center page
-def get_page_text(host,page):
+def get_page_text(browser,page):
     try:
-        browser.get(join(host,page))
+        browser.get('http://'+page)
         body = browser.find_element_by_tag_name('body')
         text = body.text.decode('ascii','ignore')
     except:
-        text = 'File not found: '+join(host,page)
-    text = '\n\nTitle:%s\n%s\n' % (browser.title, text )
+        text = 'File not found: '+page
+        text = '\n\nTitle:%s\n%s\n' % (browser.title, text )
     return text.replace('localhost:8054','shrinking-world.org')
 
 
 # Login to the Support Center web site
-def login(host,page):
-    get_page_text(host,page)
+def login(browser,page):
+    get_page_text(browser,page)
     from local_settings import username,password
     username_field = browser.find_element_by_name('username')
     username_field.send_keys(username)
@@ -38,14 +37,14 @@ def login(host,page):
 
 
 # Print the text from a Support Center page
-def print_page_text(host,page):
-    print get_page_text(host,page)
+def print_page_text(browser,page):
+    print get_page_text(browser,page)
 
 
 # Get the web page, extract the text, and save the file
-def save_page_text(host,page,output):
+def save_page_text(browser,page,output):
     f=open(output, 'wt')
-    text = get_page_text(host,page)
+    text = get_page_text(browser,page)
     f.write(text)
     f.close()
 
@@ -63,9 +62,9 @@ def page_names(url):
 
 
 # Compare the actual page to the expected one
-def test_page(host,url):
+def test_page(browser,url):
     output,correct = page_names(url)
-    save_page_text(host,url,output)
+    save_page_text(browser,url,output)
     if not exists(correct):
         accept_page_text(url)
 
@@ -92,29 +91,27 @@ def show_page_diffs(url):
 
 
 # Test a single page from the requested host
-def test_web_page(host,page):
+def test_web_page(browser,page):
     #print 'Testing', page, '...'
-    if page=='login':
-        login(host,'login')
+    if page=='http://login':
+        login(browser,'login')
         print 'Login done'
         return 
-    test_page(host,page)
+    test_page(browser,page)
     if accept_all_pages: 
         accept_page_text(page)
     show_page_diffs(page)
 
 
 # Get the home page, Login, Read all pages
-def test_web_pages(host,pages):
-    global browser
-    browser = webdriver.Chrome()
-    browser.implicitly_wait(5)
+def test_web_pages(pages):
+    #browser = webdriver.Chrome()
+    browser = webdriver.Firefox()
 
     try:
-       browser.implicitly_wait(5)
-       for page in pages:
-           print host+' '+page
-           test_web_page('http://'+host,page)
+        for page in pages:
+            print 'get page:',page
+            test_web_page(browser,page)
     except:
         print 'Test web pages failed'
 
