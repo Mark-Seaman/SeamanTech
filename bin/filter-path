@@ -3,9 +3,10 @@
 
 from sys        import stdin,stdout
 paths = '''/home/wmexpress/
-/home/seaman/
-/home/ubuntu/
 /home/wmexpress2/
+/home/ubuntu/
+/home/josiah/
+/home/seaman/
 /home/prs/
 webapps/django/support/user_doc/
 Projects/thumper/

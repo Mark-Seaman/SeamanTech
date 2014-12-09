@@ -8,3 +8,4 @@ pip install django-extensions
 pip install pillow
 pip install boto django-ses
 pip install selenium
+pip install -U celery[redis]

@@ -38,7 +38,7 @@ def execute_test(testname):
         #print 'Execute shell command', tname(testname)+'.tst'
         if not exists(tname(testname)+'.tst'):
             print 'error: Missing command',tname(testname)+'.tst'
-        text = do_command('sh '+tname(testname)+'.tst')
+        text = do_command('bash '+tname(testname)+'.tst')
         end   = datetime.now()
         t     = end-start
         print "%d.%1d seconds"%(t.seconds, t.microseconds/100000)
