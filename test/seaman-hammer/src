@@ -189,7 +189,6 @@ bin/util/pages_test.py
 bin/util/redis_test.py
 bin/util/redis_test.tst
 bin/util/search.py
-bin/util/selenium2_test.py
 bin/util/selenium_test.py
 bin/util/settings.py
 bin/util/settings_test.py
@@ -232,7 +231,6 @@ test/projects.tst
 test/records.tst
 test/redis.tst
 test/scripts.tst
-test/selenium2.tst
 test/selenium.tst
 test/settings.tst
 test/src.tst

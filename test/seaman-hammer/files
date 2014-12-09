@@ -206,7 +206,6 @@ redis.tst
 scripts.correct
 scripts.tst
 seaman-hammer
-selenium2.tst
 selenium.tst
 settings.tst
 src.correct
