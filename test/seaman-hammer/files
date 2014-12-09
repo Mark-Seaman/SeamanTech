@@ -108,6 +108,8 @@ run
 run-svr
 seamantech.conf
 search
+selenium-phantomjs-start
+selenium-phantomjs-stop
 show
 src
 src-jack
@@ -206,6 +208,7 @@ scripts.tst
 seaman-hammer
 selenium2.tst
 selenium.tst
+settings.tst
 src.correct
 src.tst
 store.tst

@@ -1,5 +1,17 @@
 /home/seaman/Projects/seamantech/bin/util
 nosetests -v settings_test.py
+from os.path import join,dirname
+
+# Location of app directory
+BASE_DIR    = dirname(dirname(dirname(__file__)))
+LOG_DIR     = join(BASE_DIR, 'logs')
+DOC_ROOT    = join(BASE_DIR, 'app', 'user_doc')
+SCRIPTS_DIR = join(BASE_DIR, 'app', 'scripts')
+username = 'seaman'
+password = 'MS1959sc'
+util.settings_test.settings_test ... ok
+util.settings_test.local_settings_test ... ok
+util.settings_test.cat_settings_test ... ok
 
 ----------------------------------------------------------------------
 

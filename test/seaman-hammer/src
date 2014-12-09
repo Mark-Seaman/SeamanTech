@@ -138,6 +138,8 @@ bin/run
 bin/run-svr
 bin/seamantech.conf
 bin/search
+bin/selenium-phantomjs-start
+bin/selenium-phantomjs-stop
 bin/show
 bin/src
 bin/src-jack
@@ -190,18 +192,13 @@ bin/util/search.py
 bin/util/selenium2_test.py
 bin/util/selenium_test.py
 bin/util/settings.py
+bin/util/settings_test.py
 bin/util/store.py
 bin/util/store_test.py
 bin/util/systest.py
 bin/util/table.py
 bin/util/table_test.py
 bin/util/tabs.py
-bin/util/test_dictdiff.py
-bin/util/test_markdown.py
-bin/util/test_redis.py
-bin/util/test_store.py
-bin/util/test_table.py
-bin/util/test_tracker.py
 bin/util/tracker.py
 bin/util/tracker_test.py
 bin/util/vars.py
@@ -237,6 +234,7 @@ test/redis.tst
 test/scripts.tst
 test/selenium2.tst
 test/selenium.tst
+test/settings.tst
 test/src.tst
 test/store.tst
 test/table.tst

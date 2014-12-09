@@ -1,26 +1,18 @@
-#!/usr/bin/env python
+#!/usr/bin/python
+# Run a python script to test selenium
 
-import unittest
 
-try:
-    from selenium import webdriver
+def selenium_install_test():
 
-    class TestGoogleHomepage(unittest.TestCase):
+    try:
+        from selenium import webdriver
     
-        def setUp(self):
-            self.browser = webdriver.Firefox()
-        
-            def testTitle(self):
-                self.browser.get('http://google.com/')
-                self.assertIn(u'Google', self.browser.title)
-        
-            def tearDown(self):
-                self.browser.quit()
-
-except:
-    print "Error: No selenium is installed"
-
+        browser = webdriver.Firefox()
+        #browser = webdriver.Chrome()
     
+        browser.get('http://google.com')
+        print browser.title
+        browser.quit()
 
-if __name__ == '__main__':
-    unittest.main(verbosity=2)
+    except:
+        print 'Error: No selenium installed'
