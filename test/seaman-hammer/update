@@ -1,5 +1,6 @@
 diff bin/project /home/seaman/Projects/jack-hammer/bin/project
 diff bin/src /home/seaman/Projects/jack-hammer/bin/src
-diff bin/var-clear /home/seaman/Projects/jack-hammer/bin/var-clear
+Missing bin/util/test_table.py
 diff bin/welcome /home/seaman/Projects/jack-hammer/bin/welcome
 diff test/src.tst /home/seaman/Projects/jack-hammer/test/src.tst
+diff test/update.tst /home/seaman/Projects/jack-hammer/test/update.tst
