@@ -4,4 +4,5 @@
 from sys import argv
 from util.systest import output
 
-print 'Test Output:', argv[1], output (argv[1])
+print 'Test Output:', argv[1]
+print output (argv[1])

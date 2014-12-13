@@ -1,0 +1,19 @@
+/home/seaman/Projects/seamantech/bin/util
+nosetests -v pages_test.py
+util.pages_test.selenium_page_test ... ERROR
+
+======================================================================
+ERROR: util.pages_test.selenium_page_test
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/seaman/Projects/seamantech/env/local/lib/python2.7/site-packages/nose/case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "/home/seaman/Projects/seamantech/bin/util/pages_test.py", line 24, in selenium_page_test
+    from util.pages import test_web_pages
+  File "/home/seaman/Projects/seamantech/bin/util/pages.py", line 9, in <module>
+    from selenium import webdriver
+ImportError: No module named selenium
+
+----------------------------------------------------------------------
+
+FAILED (errors=1)

@@ -1,0 +1,11 @@
+/home/seaman/Projects/seamantech/bin/util
+nosetests -v table_test.py
+util.table_test.test_create_data ... ok
+util.table_test.test_write_csv ... ok
+util.table_test.test_read_csv ... ok
+util.table_test.test_print ... ok
+util.table_test.test_int_table ... ok
+
+----------------------------------------------------------------------
+
+OK

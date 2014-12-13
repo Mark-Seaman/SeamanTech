@@ -1,11 +1,11 @@
-pip install djangorestframework
+pip install -U celery[redis]
+pip install Django==1.6
+pip install boto django-ses
+pip install django-extensions
 pip install django-filter
+pip install djangorestframework
 pip install markdown
 pip install nose
-pip install Django==1.6
-pip install redis
-pip install django-extensions
 pip install pillow
-pip install boto django-ses
+pip install redis
 pip install selenium
-pip install -U celery[redis]

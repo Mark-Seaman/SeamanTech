@@ -1,0 +1,43 @@
+Create the source code for a Django data type,  note/Note
+File exists already, note/note_model.py
+File exists already, note/note_query.py
+File exists already, note/note_urls.py
+File exists already, note/note_views.py
+     note/scripts_note.py
+File exists already, note/templates/note.html
+File exists already, note/templates/note_delete.html
+File exists already, note/templates/note_detail.html
+File exists already, note/templates/note_edit.html
+File exists already, note/templates/note_list.html
+File exists already, note/templates/note_test.html
+Create the source code for a Django data type,  task/Project
+File exists already, task/project_model.py
+File exists already, task/project_query.py
+File exists already, task/project_urls.py
+File exists already, task/project_views.py
+     task/scripts_project.py
+File exists already, task/templates/project.html
+File exists already, task/templates/project_delete.html
+File exists already, task/templates/project_detail.html
+File exists already, task/templates/project_edit.html
+File exists already, task/templates/project_list.html
+File exists already, task/templates/project_test.html
+Create the source code for a Django data type,  task/Time
+File exists already, task/time_model.py
+File exists already, task/time_query.py
+File exists already, task/time_urls.py
+File exists already, task/time_views.py
+     task/scripts_time.py
+File exists already, task/templates/time.html
+File exists already, task/templates/time_delete.html
+File exists already, task/templates/time_detail.html
+File exists already, task/templates/time_edit.html
+File exists already, task/templates/time_list.html
+File exists already, task/templates/time_test.html
+mv task/scripts_project.py scripts/project.py
+mv task/scripts_time.py scripts/time.py
+mv note/scripts_note.py scripts/note.py
+Creating tables ...
+Installing custom SQL ...
+Installing indexes ...
+Installed 0 object(s) from 0 fixture(s)
