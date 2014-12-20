@@ -1,4 +1,3 @@
-/home/seaman/Projects/seamantech/bin/util
 nosetests -v settings_test.py
 from os.path import join,dirname
 

@@ -1,4 +1,3 @@
-/home/seaman/Projects/seamantech/bin/util
 nosetests -v markdown_test.py
 util.markdown_test.from_markdown_test ... ok
 util.markdown_test.substitute_test ... ok

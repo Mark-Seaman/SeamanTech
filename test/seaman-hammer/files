@@ -108,6 +108,7 @@ run
 run-svr
 seamantech.conf
 search
+selenium-pages
 selenium-phantomjs-start
 selenium-phantomjs-stop
 show
@@ -127,6 +128,8 @@ tfix
 tlist
 tnew
 todo
+tpe
+tpnew
 tpyrun
 tresults
 trm
@@ -149,6 +152,7 @@ wiki-edit
 wiki-save
 wiki-setup
 wiki-update
+workflow
 
 Projects/seamantech/doc:
 Anonymous
@@ -217,6 +221,7 @@ table.tst
 tracker.tst
 update.correct
 update.tst
+workflow.tst
 
 Projects/seamantech/web:
 index.html

@@ -1,4 +1,3 @@
-/home/seaman/Projects/seamantech/bin/util
 nosetests -v dictdiff_test.py
 util.dictdiff_test.test_dict ... ok
 

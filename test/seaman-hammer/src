@@ -138,6 +138,7 @@ bin/run
 bin/run-svr
 bin/seamantech.conf
 bin/search
+bin/selenium-pages
 bin/selenium-phantomjs-start
 bin/selenium-phantomjs-stop
 bin/show
@@ -219,6 +220,7 @@ bin/wiki-edit
 bin/wiki-save
 bin/wiki-setup
 bin/wiki-update
+bin/workflow
 test/content.tst
 test/control.tst
 test/data.tst
@@ -240,3 +242,4 @@ test/store.tst
 test/table.tst
 test/tracker.tst
 test/update.tst
+test/workflow.tst

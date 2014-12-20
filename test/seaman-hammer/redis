@@ -1,4 +1,3 @@
-/home/seaman/Projects/seamantech/bin/util
 nosetests -v redis_test.py
 util.redis_test.redis_test ... ok
 
