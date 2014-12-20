@@ -4,7 +4,7 @@
 from datetime import datetime
 from genericpath import exists
 from os.path  import join, isfile, splitext, basename
-from os       import system, environ, chmod
+from os       import system, environ, chmod, remove
 from glob     import glob
 from socket   import gethostname
 
@@ -90,6 +90,12 @@ def correct_load(testname, host):
     save(tname(testname)+'.correct', correct_text)
 
 
+# Read correct answers from Git repo files and save them
+def load_correct_files(host):
+    for t in tests():
+        print 'Load Correct:',host,t
+        correct_load(t, host)
+
 
 # Accept these test results        
 def like(testname):
@@ -140,13 +146,6 @@ def tests():
     return sorted(files)
 
 
-# Run all Tests
-def run_tests():
-    list_python_tests()
-    for t in tests():
-        run (t)
-
-
 # Show Tests Results
 def tests_results():
     for t in tests():
@@ -163,6 +162,9 @@ def reset_cache():
 def create_test(t):
     code = 'tpyrun '+t.replace(environ['p'],'$p')+' \n'
     test = join(environ['pt'],basename(t.replace('_test',''))+'.tst')
+    pc = join(environ['pt'],basename(t+'.pyc'))
+    if exists(pc):
+        remove (pc)
     f = open(test,'w')
     f.write(code)
     f.close()

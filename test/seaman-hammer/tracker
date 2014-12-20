@@ -1,4 +1,3 @@
-/home/seaman/Projects/seamantech/bin/util
 nosetests -v tracker_test.py
 util.tracker_test.test_dictdiff ... ok
 util.tracker_test.test_record_counts ... ok

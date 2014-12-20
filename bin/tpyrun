@@ -4,7 +4,7 @@
 t=$1
 cd `dirname $t`
 t=`basename $t`
-pwd
+#pwd
 
 {
 echo "nosetests -v $t.py"

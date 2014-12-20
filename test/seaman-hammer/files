@@ -198,6 +198,7 @@ mkcode.correct
 mkcode.tst
 pages
 pages.tst
+projects
 projects.correct
 projects.tst
 records.correct
@@ -206,6 +207,7 @@ redis.tst
 scripts.correct
 scripts.tst
 seaman-hammer
+seaman-ultra
 selenium.tst
 settings.tst
 src.correct

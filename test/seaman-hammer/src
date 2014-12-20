@@ -161,6 +161,8 @@ bin/tmklike
 bin/tnew
 bin/todo
 bin/tout
+bin/tpe
+bin/tpnew
 bin/tpyrun
 bin/tresults
 bin/trm
