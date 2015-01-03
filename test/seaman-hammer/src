@@ -242,4 +242,3 @@ test/store.tst
 test/table.tst
 test/tracker.tst
 test/update.tst
-test/workflow.tst
