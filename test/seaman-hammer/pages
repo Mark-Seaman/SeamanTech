@@ -1,4 +1,3 @@
-/home/seaman/Projects/seamantech/bin/util
 nosetests -v pages_test.py
 util.pages_test.selenium_page_test ... ok
 

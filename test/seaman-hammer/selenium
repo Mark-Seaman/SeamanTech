@@ -1,4 +1,3 @@
-/home/seaman/Projects/seamantech/bin/util
 nosetests -v selenium_test.py
 util.selenium_test.selenium_install_test ... ok
 
