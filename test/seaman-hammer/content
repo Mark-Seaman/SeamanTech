@@ -38,46 +38,22 @@ Index
 ------------------
 <br/> <h1>Test User Home</h1>
 <br/> This is a test page for the test user.
-<br/> <div ng-controller="TabbedViewCtrl">
-  <tabset ng-show="true">
-     <tab heading="Tab 1">
-        <div class="page">
-        <b>Tab 1</b>
+<br/> <b>Tab 1</b>
 <br/>  This is some text
-<br/>         </div>
-     </tab>
-     <tab heading="Tab 2">
-        <div class="page">
-        <b>Tab 2</b>
+<br/> <b>Tab 2</b>
 <br/> This is some more text
 <br/> 
 <br/> 
-<br/>         </div>
-     </tab>
-  </tabset>
-</div>
-
+<br/> 
 <br/> <h1>Test User Home</h1>
 <br/> This is a test page for the test user.
-<br/> <div ng-controller="TabbedViewCtrl">
-  <tabset ng-show="true">
-     <tab heading="Tab 1">
-        <div class="page">
-        <b>Tab 1</b>
+<br/> <b>Tab 1</b>
 <br/>  This is some text
-<br/>         </div>
-     </tab>
-     <tab heading="Tab 2">
-        <div class="page">
-        <b>Tab 2</b>
+<br/> <b>Tab 2</b>
 <br/> This is some more text
 <br/> 
 <br/> 
-<br/>         </div>
-     </tab>
-  </tabset>
-</div>
-
+<br/> 
 * Test User Home *
 This is a test page for the test user.
 **Tab 1**
