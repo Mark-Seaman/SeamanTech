@@ -54,15 +54,22 @@ def format_bullets(line):
         return "<ul><li>"+line[i+4:]+"</li></ul>"
     return line
 
+# Format a RAW line, copied direct (for raw HTML for example) 	
+def format_raw(line): 	
+    i=line.find('  ::') 	
+    if i!=-1: 	
+        return line[i+4:] 	
+    return line
+
 # Convert the url in a string to an HTML anchor
 def muse_double_anchor(url):
-    s = r"\[\[([\/\w\.\:\-\_]*)\]\[([ \w\.\-\_\,\?\%]*)\]\]"
+    s = r"\[\[([\/\w\.\:\-\_ \%]*)\]\[([ \w\.\-\_\,\?\%]*)\]\]"
     pat = compile(s, IGNORECASE | DOTALL)
     return pat.sub(r' <a href="\1">\2</a> ', url)
 
 # Convert the url in a string to an HTML anchor
 def muse_single_anchor(url):
-    s = r"\[\[([\/\w\.\-\_]*)\]\]"
+    s = r"\[\[([\/\w\%\.\-\_]*)\]\]"
     pat = compile(s, IGNORECASE | DOTALL)
     return  pat.sub(r' <a href="\1">\1</a> ', url)
 
@@ -92,10 +99,12 @@ def wiki_words(text):
 # Convert a single line of muse to html
 def convert_links(text1):
     text = text1
+    text = format_raw(text)
     text = url_to_image(text)
     text = url_to_anchor(text)
     text = muse_anchor(text)
-    if text==text1: text = wiki_words(text)
+    #-JRE- Disabled in this project because it causes Company name/paths to convert into links
+    #if text==text1: text = wiki_words(text)
     return text
 
 # Convert a single text line to html

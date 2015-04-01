@@ -115,9 +115,12 @@ def test_web_page(browser,page):
 
 # Get the home page, Login, Read all pages
 def test_web_pages(pages):
+
     #browser = webdriver.Chrome()
     browser = webdriver.Firefox()
 
+    print 'TESTING...'
+    #exit(0)
     #try:
     for page in pages:
         print 'get page:',page

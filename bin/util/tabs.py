@@ -14,7 +14,7 @@ from util.widgets import format_widgets
 
 def group_tabs(text):
     results = []
-    groups = text.split('**')
+    groups = text.split('***')
     for i,g in enumerate(groups):
         if i%2>0:
             if i+1<len(groups):
@@ -43,7 +43,7 @@ def format_tab(text):
 def format_tabs(text):
     results = ''
     tab_groups = group_tabs(text)
-    tabs = text.split('**')
+    tabs = text.split('***')
     body = tabs[0].split('\n')
     results += convert_html(body)
     if len(tab_groups)>1:
