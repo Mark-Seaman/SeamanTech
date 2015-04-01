@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # Run a python script to test selenium
 
+HEADLESS = True
+
 from os import system, environ, chdir
 
 pages = '''
@@ -14,15 +16,17 @@ Spiritual-Things.org/LifeApps
 
 # Start up Phantom JS to run a headless browser
 def start_phantom_JS():
-    system('rbg Xvfb :99 -ac>/dev/null')
-    environ['DISPLAY'] = ":99"
-    print 'Phantom JS DISPLAY on '#,environ['DISPLAY']
+    if HEADLESS:
+        system('rbg Xvfb :99 -ac>/dev/null')
+        environ['DISPLAY'] = ":99"
+        print 'Phantom JS DISPLAY on '#,environ['DISPLAY']
 
 
 # Stop Phantom JS server to go back to normal
 def stop_phantom_JS():
-    system('killall Xvfb')
-    print 'Phantom JS DISPLAY off'
+    if HEADLESS:
+        system('killall Xvfb')
+        print 'Phantom JS DISPLAY off'
 
 
  # The tester should only be run on certain computers.
