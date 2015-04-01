@@ -8,8 +8,10 @@ from os import system, environ, chdir
 pages = '''
 google.com
 shrinking-world.org
+seamansguide.com
+seamanslog.com
 markseaman.org
-appthumper.com
+app.eventthumper.com
 Spiritual-Things.org/LifeApps
 '''.split('\n')[1:-1]
 
