@@ -78,9 +78,9 @@ def doc(request,title):
     log_page (request, title)
     host = request.get_host()
     u = user(request)
-    p = page_redirect(host,u,title)
-    if p: 
-        return redirect(request,p)
+    #p = page_redirect(host,u,title)
+    #if p: 
+    #    return redirect(request,p)
     text = show_page(host,u,title,True)
     content =  {'site_title':request.get_host(), 'user':request.user, 'title': title, 'text': text}
     return render(request, 'doc.html', content)

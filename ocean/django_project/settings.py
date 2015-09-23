@@ -8,9 +8,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+# Build paths inside the project like this: join(BASE_DIR, ...)
+from os.path import dirname, join
+BASE_DIR = dirname(dirname(__file__))
+DOC_ROOT    = join(BASE_DIR,'user_doc')
 
 
 # Quick-start development settings - unsuitable for production
@@ -22,13 +23,16 @@ SECRET_KEY = '6zVnHtBCBGe9U8wJKHU3Xksg9P96hR4LYE0A1UXaeh09ezD4aV'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Loading templates
 TEMPLATE_DEBUG = True
+TEMPLATE_DIRS = (
+    join(BASE_DIR,"templates"),
+)
 
 ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',

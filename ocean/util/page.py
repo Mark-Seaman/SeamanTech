@@ -9,7 +9,7 @@ from tabs  import format_tabs, format_doc
 from files import read_input, read_text, write_file, is_writable
 from domain import domain_directory
 from log    import append_log
-from settings import DOC_ROOT
+from django_project.settings import DOC_ROOT
 
 
 # Log the document hits
@@ -75,6 +75,7 @@ def show_page(host,user,path,allow_public=True):
             return format_doc(doc)
 
     doc = doc_path(host,user,path)
+    #print('docpath:'+doc)
     if exists(doc):
         return edit_link(host,user,path)+format_doc(doc)        
 
