@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+
+    <h2>Time Detail {{ object.pk }}</h2>
+    <p> *
+      <a href="/time/">Times</a> * 
+      <a href="/time/{{ time.pk }}/edit">Edit</a> * 
+      <a href="/time/{{ time.pk }}/delete">Delete</a> *
+    </p>
+
+    {% if debug %}
+    <pre>
+      Values: 
+      {{value_list}}
+    </pre>
+    {% endif %}
+
+    <hr>
+    
+    {% if value_list %}
+    <p>
+      Describe this data type...
+    </p>
+
+    <table>
+        {% for name in value_list %}
+            <tr>
+              <td>{{ name.0 }}</td>
+              <td><b>{{ name.1 }}</b></td>
+            </tr>
+        {% endfor %}      
+    </table>
+    {% endif %}
+
+
+{% endblock %}

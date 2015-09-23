@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+    <h2>My Contacts</h2>
+    <a href='/'>Home</a>
+    <a href='/contact/add'>Add Contact</a>
+    <a href='/contact/test'>Contact Test</a>
+
+    {% if debug %}
+    <pre>
+      {{ object_list }}
+    </pre>
+    {% endif %}
+
+    <hr>
+    <table>
+        {% for row in object_list %}
+            <tr>
+              {% for column in row %}
+                  <td>{{ column }}</td>
+              {% endfor %}
+            </tr>
+            <td>
+              <a href="/contact/{{ row.0 }}">Details</a>
+            </td>
+        {% endfor %}
+    </table>
+
+{% endblock %}
