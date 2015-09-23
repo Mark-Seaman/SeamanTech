@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'doc',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,20 +52,10 @@ ROOT_URLCONF = 'django_project.urls'
 
 WSGI_APPLICATION = 'django_project.wsgi.application'
 
-
 # Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
+# Import external settings files
+from db import DATABASES
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django',
-        'USER': 'django',
-        'PASSWORD': '2nlRtx0NCo',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
