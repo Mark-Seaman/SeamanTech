@@ -11,8 +11,8 @@
     <link href="/static/bootstrap-combined.min.css" rel="stylesheet">
     <script src="/static/angular.js"></script>
     <script src="/static/ui-bootstrap-tpls-0.4.0.js"></script>
-    <link  href="/static/thumper.css" rel="stylesheet" />
-    <script src="/static/thumper.js"></script>
+    <link  href="/static/hammer.css" rel="stylesheet" />
+    <!--<script src="/static/thumper.js"></script> -->
   </head>
   <body>
 
@@ -27,27 +27,6 @@
         {% else %}
         <h1>Shrinking-World.Org</h1>
         {% endif %}
-
-
-        {% block user %} 
-        <div class="user">
-
-          {% if user.is_authenticated and user.is_staff %}
-
-              <p id="hpara">
-                Logged in as,
-                <strong>{% firstof user.first_name user.username %}</strong>.
-                <!-- <a href="/password_change">Change password</a> -->
-                <a id="hpara" href="/logout">Log out</a>
-              </p>
-
-          {% else %}
-
-              <p id="hpara">You are not logged in.
-                <a id="hlink" href="/login/?next=/"><b>Login</b></a>
-              </p>
-    
-          {% endif %}
 
         </div>
         {% endblock %}

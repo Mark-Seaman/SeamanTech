@@ -1,10 +1,12 @@
 * The Leverage Principle *                                       -*-muse-*-
-    by Mark Seaman
+A Software Architect’s Guide to Resilient Development and Operations
 
+[[images/LeverageCover.png]]
 
 This book is currently in the final editing and review cycle, and is expected
 to release in November 2015.
 
+---
 
 **About the Book**
 
@@ -23,7 +25,7 @@ Learn the secrets of architectures that last.
 
 **About the Author**
 
-[[images/sws_logo_75.png]]
+[[images/Mark.Seaman.200.jpg]]
 
 * worked in all facets of software development for 25 years at HP 
 
