@@ -4,7 +4,7 @@ from subprocess         import Popen,PIPE
 from os.path            import exists,join,dirname,basename
 from os                 import listdir,remove
 
-from app.settings       import DOC_ROOT
+from django_project.settings import DOC_ROOT
 from util.page          import show_page
 from util.doc           import doc_show
 
