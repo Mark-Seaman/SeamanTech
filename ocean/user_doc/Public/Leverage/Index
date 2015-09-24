@@ -1,31 +1,44 @@
 * The Leverage Principle *                                       -*-muse-*-
     by Mark Seaman
 
-How to develop software that lasts longer and works better.
+
+This book is currently in the final editing and review cycle, and is expected
+to release in November 2015.
+
+
+**About the Book**
+
+Learn how to dramatically reduce the cost of producing software by building
+higher quality in from the start.
+
+Apply best practices to prevent technical debt, which helps you fully leverage
+existing solutions to new products.
+
+Build resiliency in your software development and operations by building a
+sustainable culture for your teams.
+
+Learn the secrets of architectures that last.
 
 ---
-**Table of Contents**
 
+**About the Author**
 
-**Overview**
+worked in all facets of software development for 25 years at HP 
 
-     [[Abstract]]
+founder of [[shrinking-world.net][[Shrinking World Solutions]] an 
+engineering and training company
 
-     [[Intro][Introduction]]
+personally written a million lines of code on over 70 software projects
 
-     [[Outline1][Content Outline]]
+early adopter of agile practices and new technologies
 
+---
 
-**Chapters**
+**Dive In**
 
-     [[Part1][Why Reuse Software?]]
+[[StartReading][Start Reading]]
 
-     1. [[Part2][Definition]] - Planning your leverage
+[[ApplyingLeverage][Applying Leverage Workshop]]
 
-     2. [[Part3][Design]] - Reusable Architecture
+[[http://shrinking-world.net/blog/][Blog]]
 
-     3. [[Part4][Code]] - Building Components
-
-     4. [[Part5][Test]] - Strategic Testing
-
-     [[10Ways][How to Increase Leverage]]
