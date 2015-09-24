@@ -1,0 +1,7 @@
+* Abstract *                                         -*-muse-*-
+
+---
+
+Reusing software is a critical goal for every organization.  Software development is too expensive to start every project from scratch.  But the process of reusing software can end up being far more costly that starting fresh.   A failed project can easily be ten times the cost of a project with successful leverage.  
+
+This book will teach you the secrets of software reuse.  Mark Seaman teaches the lessons learned from around 100 projects that he has worked on over the last 35 years as a professional software developer.   This experience covered many different types of project sizes, technologies, team organization, and geographical distribution.  The projects varied from outrageous success to colossal failure.  Learn how to choose the former over the latter.

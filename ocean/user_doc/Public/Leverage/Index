@@ -1,0 +1,31 @@
+* Software Leverage *                                       -*-muse-*-
+    by Mark Seaman
+
+How to develop software that lasts longer and works better.
+
+---
+**Table of Contents**
+
+
+**Overview**
+
+     [[Abstract]]
+
+     [[Intro][Introduction]]
+
+     [[Outline1][Content Outline]]
+
+
+**Chapters**
+
+     [[Part1][Why Reuse Software?]]
+
+     1. [[Part2][Definition]] - Planning your leverage
+
+     2. [[Part3][Design]] - Reusable Architecture
+
+     3. [[Part4][Code]] - Building Components
+
+     4. [[Part5][Test]] - Strategic Testing
+
+     [[10Ways][How to Increase Leverage]]

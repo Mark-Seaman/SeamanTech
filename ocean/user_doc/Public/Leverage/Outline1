@@ -1,0 +1,31 @@
+* Software Leverage - Outline *                                       -*-muse-*-
+
+---
+
+**Definition** - Planning your leverage
+
+ * Hope is not a plan
+ * What not to leverage
+ * Complexity management
+ * Strategies that work
+
+**Design** - Reusable architecture
+
+ * Strategic Interfaces
+ * Re-factored frameworks
+ * Design patterns/idioms
+ * Evolutionary design
+
+**Code** - Building components
+
+ * Encapsulation & data hiding
+ * Open/closed principle
+ * Testing scenarios
+ * Automation interfaces
+
+**Test** - Strategic testing
+
+ * Beyond tactics
+ * Live data exercises
+ * Browser automation
+ * Diff testing

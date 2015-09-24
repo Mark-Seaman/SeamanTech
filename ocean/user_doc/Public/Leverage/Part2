@@ -1,0 +1,134 @@
+* Chapter 1. Definition Phase *                                 -*-muse-*-
+
+---
+
+Planning your leverage
+
+ * Hope is not a plan
+ * What not to leverage
+ * Complexity management
+ * Strategies that work
+
+---
+
+**Planning your leverage**
+
+Your plan for leverage should begin at the inception of your project.  When you know you must create some software, you should begin thinking about how long you want it to live.  Many organizations try to treat software reuse as a add-on to existing software.  But this is far too late to build in that option.
+
+At the beginning of the project it is easy to choose a set of tools and practices that let you utilize the same software in a variety of ways.  Once you have an existing system it is far more expensive to reuse components or architectures that were never built for that.  To reuse software in a different context requires building additional infrastructure around the existing system.
+
+Knowing that you want to leverage your software allows you to design and implement the product and the scaffolding at the same time.  Create external structure that is needed for the leverage is far more complex to add later.  The external structures are never really integrated in at the same level because they occur after the fact.
+
+The default answer for most projects is that it is deemed to costly to try and reuse an existing system.  It is easier to doze the building and build a new one from scratch rather than remodel the existing building.
+
+The rate of bit rot in a static system dictates the useful life of a piece of software.  A rigid software system will decay over two years to the point where is viability must be questioned.
+
+Some organizations build this thinking into their fundamental business planning.  I once was a part of an organization that would scrap its multi-million dollar software platform every two years.  In order to justify this extraordinary waste, they would switch technologies.  Moving to a new technology creates a reason to get rid of all the old code. But the true failure lies in not protecting the integrity of the software over time.
+
+If proper practices are in place, your software will remain healthy and vigorous over decades.
+
+---
+
+**Hope is not a plan**
+
+As humans we must have hope.  Why would you go to work unless you thought that the project was going to succeed?  It is good that we have a "can do” attitude and are not derailed by every challenge that comes up against us.  Without perseverance, tenacity, and optimism we cannot succeed in the real world.
+
+But there is also a limit to how far we can go with positivity alone.   The biggest problem with reality is that is comes when we are not looking.  Ugly problems appear that confront every ideal assumption that we hold.
+
+The danger of wishful thinking is that it can make us immune to reality.  We want the world to be bright and easy and we can not admit to ourselves that we have not done all that we needed to do.  Maybe we have committed to an unrealistic schedule, or have unskilled team members, or skimped on the test planning, or are trying to build a time machine. 
+
+A solid plan is always built on reality.  It has several key elements that make it workable over time. 
+
+Reality - are the goals of this project consistent with the past history and available resources?
+Flexibility - is there a feedback loop that will let you adapt throughout the project?
+Skill - are the right people in the right roles to make it happen?
+Clarity - can everyone on the project say what the most important goal is?
+
+Make your plan flexible.  This is far more important than guessing right the first time.  The beginning of a new project is the time of the lowest level of understanding.  If you make all of the key decisions on your project then 90% of them will be wrong.
+
+Instead of committing to everything when you know almost nothing, build a plan to increase understanding as quickly as possible.  Move in a direction that makes sense and postpone making important tradeoffs until you have all the facts.
+
+A system that lasts for a long time is one that will evolve over its entire life.  Software systems are more like living entities that grow than buildings that are created.  You cannot possibly know what the entire system will be until it has been fully realized.
+
+Make your plans for the project flexible, much like you want the system itself to be flexible.  Commit to a strategy and an eventual goal.  But constantly monitor the progress and adjust the tactical plan to optimize the path as you go.
+
+Successful projects always follow incremental development.  Rigid plans, like rigid system, always fail.
+
+---
+
+**What not to leverage**
+
+I’ve worked on projects where the overlords, simply assumed that there was extensive leverage possible because they wanted it to be so.  It is necessary to evaluate each situation with all of its unique aspects to determine if reuse is possible or desirable.
+
+Declaring that a new project will be 90% reuse from the last one, while adding lots of new requirement is a recipe for a death march.  Not everything is leveragable.  Remember, we are trying to lower cost by reducing complexity.   Turning a fish into a bird, is not cheaper that create a bird from scratch.
+
+You need to look at the problem you are solving.   How has it evolved from last time?  What new requirements and constraints will be applied to the solution?  How flexible is your existing structure?
+
+Evaluate the scenario where you start from scratch.  Evaluate the scenario where you start from the old system.  My experience has been that organizations always overestimate the value of the code that they have and under value the understanding of the requirements.
+
+Most of the leverage is in the problem understanding.  The actual lines of code may be a greater liability than an asset.  Every programmer has had the experience of rewriting a system that they were intimately familiar with.  It typically takes about 20% of the original effort.  While adapting an existing system can easily take 50% of the original creation effort.
+
+A remodel is always more difficult than expected, because surprises result in having to solve more problems.  You remove the wall only to realize that the wiring is unsafe.  Now you must put in new wiring, repair the old wiring, and integrate the two.  Old assumptions no longer hold, and it is difficult to even trust the tests.
+
+All of this results in a situation where we think that the system works properly, but are not quite sure.  Multiply this over 40 different authors and 6 years and you have an absolute mess.  Over time engineers lose the ability to make changes with any degree of confidence.
+
+At this point the system enters the “walking dead” phase of its lifecycle.  The practices that you learn here will prevent you from having to abandon a useful system due to bit rot.  Without these practices that is the natural destiny of every software system.
+
+---
+
+**Complexity management**
+
+Complexity is key driver of software quality.   If your system is complex it will be far more costly to build and maintain.  The cost of a system grows exponentially with the complexity
+
+If you want to control something you need to be able to measure it.   For this reason, I believe that it is vital to have complexity measure that can be computed within 5 seconds.
+
+There has been a great deal of good computer science research on code complexity.  McCabe and Halstead have well calibrated methods of computing complexity numbers.  I think this degree of rigor is seldom need.  Instead, consider simple metrics that can be computed in real time by a script.
+
+Complexity comes from all of the combinations from all of the bits of logic that occur in our system.  Complexity is driven by two main forces. 
+Size of the system makes it complex
+Likelihood of each part to be connected with other parts 
+
+I like simple tools that allow me to reason about a system.  Even if they don’t produce “accurate” results, they will produce useful results.  Over time when can learn to interpret the results within a given context.  Let’s use this principle to build our own custom measurement for complexity.  Then we will build a tool in about ten minutes that will be useful for managing the complexity in your system.
+
+A system is built from source code.  This is any code that a human must write and maintain.  A tool might be written in 100 lines of code to emit a XML file of one million lines or a case system of 1000 lines.  Both of these examples only count for 100 lines of source code.
+
+Almost all of the source code can be organized as files with lines of text.  Let’s count the files in our project, the lines in each file, and the total lines of source in our project.
+
+We now have a measure of the size of the project in lines.  Imagine that each line has some average connection with other code in the project.  A 20% connection seems likely.  This leads to a reasonable weight of complexity being
+
+     complexity = num lines ** 1.2
+
+This produces a slight exponential effect without being as severe as squaring the size.  Remember, the measure need not be accurate to be useful.
+
+We could also calculate module complexity to be the same measurement.   This gives us a quick way to find complicated subsystems.  If most subsystem weight in at 30  and one scores 400, then it is a good candidate for redesign.
+
+Why is this useful?  Cost scales with complexity.  Decrease the complexity in order to decrease the cost.   A simple tool will point you to the biggest areas for improvement.  Focus all of your energy on the most complex parts rather than trying to simplify everything.
+
+     Complexity = Risk = Cost
+
+Make this incremental simplification a normal part of every day.  Replacing a complex thing with a simple thing will make everything better.  Imagine the effect of 1000 minor improvement to your project.  Each lowers the risk to your project.  Collectively they can easily yield a two time reduction in cost.
+
+---
+
+**Strategies that work**
+
+We are assuming now that you have an easy weigh to measure the overall complexity of your system.  This will become and important tool in your planning.  Don’t leave home without it.  Do not continue to make random changes without being able to see that your system is actually improving. 
+
+Remember, system complexity is the driver for cost.  Each day you should strive to lower the complexity.  This requires a baseline that can be calculated in seconds.
+
+Your complexity measure should also give you a number for the complexity of each part of your system.  I recommend that you track the complexity of about ten subsystems.  Any system of moderate complexity can be split into at least 10 different subsystems.
+
+Find the natural boundaries that separate groups of functions.  Within the subsystem the cohesion should be high.  In other words,  all the parts of the subsystem probably talk to each other.  While the subsystems are only loosely connected to one another.  The subsystems should be loosely coupled, but internally well connected on the inside.
+
+Plan out how you can strengthen the architectural design of these interfaces.  For example, two subsystems that are connected through a scripting language, are bound to be much looser that if functions are called directly. 
+
+A limited vocabulary on an interface gives you a reduction is complexity.  Clarify exactly who calls who, and what they say.  Reduce the amount of knowledge that different subsystems have of each other.
+
+Measure quality of each subsystem.  You should have an accurate picture of the top three hotspots in your application at all times.  A hotspot will have the most defects outstanding and the highest complexity.  In my experience, these two bad things always go together.
+
+Create a software plan for each subsystem.  Focus on the top three hotspots.  Nothing else matters until you fix these areas.  Why waste time on the lesser issues when these areas are producing more bit rot than any other.
+
+Your overall approach to maintaining the software on a project, should be built around how you can address the top three problem areas in your project.  You should have a plan to fix the three worst problems within the next month.  Why would you allow these bug farms to continue the breeding cycle.
+
+No patron to a restaurant says, “Oh, look… there’s a roach, I should add that to a list so that someone can eventually remember to kill it.”  We must look at software defects with the same scrutiny that a health inspector has.  If there’s one roach, you know there’s a lot more.  Find and eliminate the breeding ground before it shuts down development.
+
