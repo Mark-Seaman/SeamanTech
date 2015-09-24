@@ -16,9 +16,6 @@
   </head>
   <body>
 
-    <!--
-      -->
-
     {% block banner %}
     <div class="header">
 
@@ -28,14 +25,14 @@
         <h1>Shrinking-World.Org</h1>
         {% endif %}
 
-        </div>
-        {% endblock %}
-
-
         {% block navbar %}
-        <p>
-          <a  id="hlink" href="/"><b>Home</b></a>
-        </p>
+        <center>
+          ** 
+          <a class="hlink" href="/"><b>Home</b></a> 
+          ** 
+          <a class="hlink" href="http://shrinking-world.net">Shrinking World</a>
+          ** 
+        </center>
         {% endblock %}
 
     </div>
@@ -43,13 +40,13 @@
 
 
     <div class="page">
-      <div style="margin:3em">
+      <div>
         {% block content %} 
         {% endblock %}
       </div>
     </div>
 
-    <div style="margin:3em">
+    <div class="footer">
       {% block footer %} 
       {% endblock %}
     </div>
