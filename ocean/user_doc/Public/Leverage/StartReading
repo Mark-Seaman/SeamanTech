@@ -6,30 +6,30 @@ A Software Architect’s Guide to Resilient Development and Operations
 
 **Part 1 - Leverage**
 
-     1 - The Leverage Principle [[Leverage.asc]]
-     2 - Technical Debt
-     3 - Best Practices 
+     1 - The Leverage Principle - [[Leverage.asc][start reading]]
+     2 - Technical Debt - [[Debt.asc][start reading]]
+     3 - Best Practices - [[Practices.asc][start reading]]
 
 **Part 2 - Development**
 
-     4 - Managing Technology 
-     5 - Architectural Leverage
-     6 - Code Leverage
-     7 - Test Leverage
+     4 - Managing Technology - [[Technology.asc][start reading]]
+     5 - Architectural Leverage - [[Design.asc][start reading]]
+     6 - Code Leverage - [[Code.asc][start reading]]
+     7 - Test Leverage - [[Test.asc][start reading]]
 
 **Part 3 - Operations**
 
-     8 - The Release Cycle
-     9 - Services that Scale
-     10 - Deployment Tools & Techniques
-     11 - Monitoring for Leverage
+     8 - The Release Cycle - [[Release.asc][start reading]]
+     9 - Services that Scale - [[Services.asc][start reading]]
+     10 - Deployment Tools & Techniques - [[Deployment.asc][start reading]]
+     11 - Monitoring for Leverage - [[Monitoring.asc][start reading]]
 
 **Part 4 - People**
 
-     12 - Knowledge Management
-     13 - High-Performance Teams
-     14 - Managing Learning
-     15 - Planning for Leverage
+     12 - Knowledge Management - [[Knowledge.asc][start reading]]
+     13 - High-Performance Teams - [[Teamwork.asc][start reading]]
+     14 - Managing Learning - [[Learning.asc][start reading]]
+     15 - Planning for Leverage - [[Planning.asc][start reading]]
 
 ---
 
