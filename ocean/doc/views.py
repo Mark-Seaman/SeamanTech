@@ -10,6 +10,7 @@ from os                 import system,environ
 from models    import *
 from util.page import show_page,put_page,get_page,page_redirect,allow_edit
 from util.log  import append_log
+from asciidoc import asciidoc_html
 
 
 # Render a form for editing
@@ -72,15 +73,21 @@ def redirect(request,title):
     return HttpResponseRedirect('/'+title) 
 
 
+def asciidoc(request,title):
+    text = asciidoc_html(title)
+    content =  {'site_title':request.get_host(), 'title': title, 'text': text}
+    return render(request, 'doc.html', content)
+
+
 # Render the appropriate doc view
 def doc(request,title):
     doc = user_doc(request,title)
     log_page (request, title)
     host = request.get_host()
     u = user(request)
-    #p = page_redirect(host,u,title)
-    #if p: 
-    #    return redirect(request,p)
+    p = page_redirect(host,u,title)
+    if p: 
+        return redirect(request,p)
     text = show_page(host,u,title,True)
     content =  {'site_title':request.get_host(), 'user':request.user, 'title': title, 'text': text}
     return render(request, 'doc.html', content)

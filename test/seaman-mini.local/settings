@@ -1,0 +1,2 @@
+nosetests -v settings_test.py
+/Users/seaman/Projects/seamantech/bin/tpyrun: line 11: nosetests: command not found
