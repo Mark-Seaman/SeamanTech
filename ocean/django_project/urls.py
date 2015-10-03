@@ -5,6 +5,10 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('',
     #url(r'^admin/', include(admin.site.urls)),
     #url(r'^$', views.index, name='index'),
+    url(r'^bible$',   'doc.views.bible'),
+    url(r'^prayers$', 'doc.views.prayers'),
+    url(r'^reflect$', 'doc.views.prayers'),
+    url(r'^review$',  'doc.views.prayers'),
     url(r'^',         include('doc.urls')),
 )
 

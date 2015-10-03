@@ -7,8 +7,8 @@ def selenium_install_test():
     try:
         from selenium import webdriver
     
-        browser = webdriver.Firefox()
-        #browser = webdriver.Chrome()
+        #browser = webdriver.Firefox()
+        browser = webdriver.Chrome()
     
         browser.get('http://google.com')
         print browser.title
@@ -16,3 +16,5 @@ def selenium_install_test():
 
     except:
         print 'Error: No selenium installed'
+
+selenium_install_test()

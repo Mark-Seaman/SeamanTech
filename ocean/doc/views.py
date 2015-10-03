@@ -5,13 +5,37 @@ from django.shortcuts   import render_to_response, get_object_or_404
 from django.template    import loader, Context, RequestContext
 from django.utils.html  import escape
 from os.path            import join, exists, dirname
-from os                 import system,environ
+from os                 import system,environ, listdir
+from random import choice
 
 from models    import *
 from util.page import show_page,put_page,get_page,page_redirect,allow_edit
 from util.log  import append_log
 from asciidoc import asciidoc_html
+from django_project.settings import DOC_ROOT
 
+
+def random_file(topic):
+    path = '%s/Public/Spiritual-Things.org/%s'% (DOC_ROOT,topic)
+    select = choice(listdir(path))
+    path = join(path,select)
+    text = open(path).read()
+    return '<h3>%s</h3><br><p>%s</p>' % (text,select)
+
+
+def bible(request):
+    text = random_file('bible')
+    content =  {'site_title':request.get_host(), 'title': 'Bible Verse', 'text': text}
+    return render(request, 'doc.html', content)
+
+
+def prayers(request):
+    text = random_file('prayers')
+    content =  {'site_title':request.get_host(), 'title': 'Prayers', 'text': text}
+    return render(request, 'doc.html', content)
+
+def random_page(request):
+    pass
 
 # Render a form for editing
 def form_render(request,template,data):
