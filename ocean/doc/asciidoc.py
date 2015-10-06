@@ -68,9 +68,25 @@ def asciidoc_help():
             ''')
 
 
-def asciidoc_html(topic):
+# Convert a url to a directory
+def doc_path(host,path):
+    dir = domain_directory(host)
+    user = user.replace('Anonymous', 'Public')
+    if dir: 
+        doc = 'Public/'+dir+'/'+path
+    else:
+        doc = user+'/'+path
+    log_page('path '+doc)
+    return join(DOC_ROOT,doc)
+
+
+def asciidoc_html(doc):
     '''Render asciidoc text as HTML.'''
-    text = open(DOC_ROOT+'/Public/Leverage/'+topic+'.asc').read()
+    path = join(DOC_ROOT,doc)
+    if exists(path):
+        text = open(path).read()
+    else:
+        text = "File not found, "+doc
     lines = text.split('\n')
     lines = [ convert_line(line) for line in lines ]
     text = '\n'.join(lines)

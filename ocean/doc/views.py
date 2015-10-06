@@ -9,9 +9,9 @@ from os                 import system,environ, listdir
 from random import choice
 
 from models    import *
-from util.page import show_page,put_page,get_page,page_redirect,allow_edit
+from util.page import doc_path, show_page,  put_page, get_page, page_redirect, allow_edit
 from util.log  import append_log
-from asciidoc import asciidoc_html
+from doc.asciidoc import asciidoc_html
 from django_project.settings import DOC_ROOT
 
 
@@ -98,7 +98,9 @@ def redirect(request,title):
 
 
 def asciidoc(request,title):
-    text = asciidoc_html(title)
+    host = request.get_host()
+    doc  = doc_path(host,'Public',title+'.asc')
+    text = doc + asciidoc_html(doc)
     content =  {'site_title':request.get_host(), 'title': title, 'text': text}
     return render(request, 'doc.html', content)
 
