@@ -9,6 +9,7 @@ from os                 import system,environ, listdir
 from random import choice
 
 from models    import *
+from util.domain import domain_title
 from util.page import doc_path, show_page,  put_page, get_page, page_redirect, allow_edit
 from util.log  import append_log
 from doc.asciidoc import asciidoc_html
@@ -115,6 +116,7 @@ def doc(request,title):
     if p: 
         return redirect(request,p)
     text = show_page(host,u,title,True)
+    title = 'xxx'
     content =  {'site_title':request.get_host(), 'user':request.user, 'title': title, 'text': text}
     return render(request, 'doc.html', content)
 
