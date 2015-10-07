@@ -17,6 +17,7 @@ from django_project.settings import DOC_ROOT
 
 
 def random_file(topic):
+    '''Select content from a random file in the directory'''
     path = '%s/Public/Spiritual-Things.org/%s'% (DOC_ROOT,topic)
     select = choice(listdir(path))
     path = join(path,select)
@@ -25,22 +26,56 @@ def random_file(topic):
 
 
 def bible(request):
-    text = random_file('bible')
-    content =  {'site_title':request.get_host(), 'title': 'Bible Verse', 'text': text}
-    return render(request, 'doc.html', content)
+    return random_page(request, 'bible')
 
+def reflect(request):
+    return random_page(request, 'reflection')
+
+def review(request):
+    return random_page(request, 'teaching')
 
 def prayers(request):
-    text = random_file('prayers')
-    content =  {'site_title':request.get_host(), 'title': 'Prayers', 'text': text}
+    return random_page(request, 'prayers')
+
+
+def random_page(request, topic):
+    text = random_file(topic)
+    title = topic
+    return render_page (request,title,text)
+
+
+def asciidoc(request,title):
+    '''Find and render to asciidoc content'''
+    host = request.get_host()
+    doc  = doc_path(host,'Public',title+'.asc')
+    text = doc + asciidoc_html(doc)
+    site_title = domain_title(host)
+    return render_page(request,title,text)
+
+
+def doc(request,title):
+    '''Render the appropriate doc view'''
+    doc = user_doc(request,title)
+    log_page (request, title)
+    host = request.get_host()
+    u = user(request)
+    p = page_redirect(host,u,title)
+    if p: 
+        return redirect(request,p)
+    text = show_page(host,u,title,True)
+    return render_page(request,title,text)
+
+
+def render_page(request,title,text):
+    '''Format the web page with content'''
+    site = domain_title(request.get_host())
+    content =  {
+        'site_title': site, 
+        'user': request.user, 
+        'title': site + '-' +title, 
+        'text': text
+    }
     return render(request, 'doc.html', content)
-
-def random_page(request):
-    pass
-
-# Render a form for editing
-def form_render(request,template,data):
-    return render_to_response(template, data, context_instance=RequestContext(request))
 
 
 # Render a web page
@@ -49,12 +84,10 @@ def render(request,template,data):
     return HttpResponse(page.render(Context(data)))
 
 
-# Get the IP address for the request
-def ip(request):
-    if request.META['REMOTE_ADDR']=='127.0.0.1':
-        return request.META['REMOTE_ADDR']
-    #return request.META['HTTP_X_FORWARDED_FOR']
-    return 'None'
+# Render a form for editing
+def form_render(request,template,data):
+    return render_to_response(template, data, context_instance=RequestContext(request))
+
 
 # Name of requesting user
 def user(request):
@@ -73,7 +106,7 @@ def user_doc(request,title):
 
 # Log the page hit in page.log  (time, ip, user, page, doc) 
 def log_page(request,title): 
-    append_log( ip(request)+' '+request.get_host()+' '+user(request)+' '+title)
+    append_log(request.get_host()+' '+user(request)+' '+title)
 
 
 # Render the view for a missing document
@@ -97,29 +130,6 @@ def missing(request,title):
 def redirect(request,title):
     log_page (request,title)
     return HttpResponseRedirect('/'+title) 
-
-
-def asciidoc(request,title):
-    host = request.get_host()
-    doc  = doc_path(host,'Public',title+'.asc')
-    text = doc + asciidoc_html(doc)
-    content =  {'site_title':request.get_host(), 'title': title, 'text': text}
-    return render(request, 'doc.html', content)
-
-
-# Render the appropriate doc view
-def doc(request,title):
-    doc = user_doc(request,title)
-    log_page (request, title)
-    host = request.get_host()
-    u = user(request)
-    p = page_redirect(host,u,title)
-    if p: 
-        return redirect(request,p)
-    text = show_page(host,u,title,True)
-    title = 'xxx'
-    content =  {'site_title':request.get_host(), 'user':request.user, 'title': title, 'text': text}
-    return render(request, 'doc.html', content)
 
 
 # Render the home view

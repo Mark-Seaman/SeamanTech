@@ -84,7 +84,7 @@ def asciidoc_html(doc):
     '''Render asciidoc text as HTML.'''
     path = join(DOC_ROOT,doc)
     if exists(path):
-        text = open(path).read()
+        text = open(path).read().decode('ascii','ignore')
     else:
         text = "File not found, "+doc
     lines = text.split('\n')
@@ -95,12 +95,18 @@ def asciidoc_html(doc):
 
 
 def convert_line(line):
-    return convert_paragraphs(convert_heading(line)) 
+    return convert_quotes(convert_paragraphs(convert_heading(line)))
 
 
 def convert_paragraphs(line):
     if not line or line.startswith('*'):
         return '<p></p>'+line
+    return line
+
+
+def convert_quotes(line):
+    if not line or line.startswith('____'):
+        return '<hr>'
     return line
    
 

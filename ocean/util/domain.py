@@ -10,28 +10,63 @@ from files import read_input, read_text, write_file, is_writable
 from django_project.settings import DOC_ROOT
 
 
+domain_info = {
+    'world-class-software.com': { 
+        'directory': 'Leverage', 
+        'title': 'The Leverage Principle'
+    },
+    'spiritual-things.org': { 
+        'directory': 'Spiritual-Things.org', 
+        'title': 'Quiet Moments'
+    },
+    'seamanslog.com': {
+        'directory': 'SeamansLog.com',
+        'title': "Seaman's Log"
+    },
+    'mybookonline.org': {
+        'directory': 'mybookonline.org',
+        'title': 'mybookonline.org'
+    },
+    'exteriorbrain.com': {
+        'directory': 'Brain',
+        'title': 'Exterior Brain'
+    },
+    'seaman-tech.com': {
+        'directory': 'seaman-tech.com',
+        'title': 'seaman-tech.com'
+    },
+    'markseaman.info': {
+        'directory': 'MarkSeaman.info',
+        'title': 'MarkSeaman.info'
+    },
+    'markseaman.org': {
+        'directory': 'MarkSeaman.org',
+        'title': 'MarkSeaman.org'
+    }
+}
+
 # Read the domain mapping from a file
-def domain_map():
-    map = {}
-    for d in open(join(DOC_ROOT,'Domains')).read().split('\n'):
-        d = d.split(' ')
-        if len(d)>1:
-            map[d[0]] = d[1]
-    return map
+# def domain_map():
+#     map = {}
+#     for d in open(join(DOC_ROOT,'Domains')).read().split('\n'):
+#         d = d.split(' ')
+#         if len(d)>1:
+#             map[d[0]] = d[1]
+#     return map
 
 # Read the domain mapping from a file
 def domain_title(domain):
-    for d in open(join(DOC_ROOT,'Domains')).read().split('\n'):
-        d = d.split(' ')
-        if len(d)>2 and d[0]==domain:
-             return d[2]
+    if domain_info.has_key(domain):
+        return domain_info[domain]['title']
 
 
 # Map the domain to a document directory
 def domain_directory(domain):
-    m = domain_map()
-    if m.has_key(domain) and m[domain]!='.':
-        return m[domain]
+    # m = domain_map()
+    # if m.has_key(domain) and m[domain]!='.':
+    #     return m[domain]
+    if domain_info.has_key(domain):
+        return domain_info[domain]['directory']
 
 
 # Convert a url to a directory
