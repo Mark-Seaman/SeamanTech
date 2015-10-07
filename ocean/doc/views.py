@@ -86,6 +86,7 @@ def new(request,title):
 # Render the view for a missing document
 def missing(request,title):
     text = 'Missing File:' + title
+    text = user_doc(request,title)
     data = {'title':title, 'dir':dirname(title), 'text':text, 
             'default':basename(title), 'newpage':'{{newpage}}'}
     return render(request, 'missing.html', data)
