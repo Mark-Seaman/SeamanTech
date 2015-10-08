@@ -33,15 +33,15 @@ domain_info = {
     },
     'seaman-tech.com': {
         'directory': 'seaman-tech.com',
-        'title': 'seaman-tech.com'
+        'title': 'Seaman Tech'
     },
     'markseaman.info': {
         'directory': 'MarkSeaman.info',
-        'title': 'MarkSeaman.info'
+        'title': 'Mark Seaman.info'
     },
     'markseaman.org': {
         'directory': 'MarkSeaman.org',
-        'title': 'MarkSeaman.org'
+        'title': 'Markos de Seaman'
     }
 }
 

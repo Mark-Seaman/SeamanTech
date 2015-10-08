@@ -1,7 +1,7 @@
 from django.http        import HttpResponseRedirect, HttpResponse
 from django.template    import loader, Context
 from os import system, environ, listdir
-from os.path import join, exists
+from os.path import join, exists, dirname, basename
 from random import choice
 
 from util.domain import domain_title
