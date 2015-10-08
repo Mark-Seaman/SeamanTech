@@ -34,16 +34,7 @@ def random_file(topic):
 
 def random_line(topic):
     path = '%s/Public/Spiritual-Things.org/%s'% (DOC_ROOT,topic)
-    # text = '<h3>%s</h3>' % choice(open(path).read().split('\n'))
-    # title = 'Reflection'
-    # return render_page (request,title,text)
     return '<h3>%s</h3>' % choice(open(path).read().split('\n'))
-
-
-# def random_page(request, topic):
-#     text = random_file(request,topic)
-#     title = topic
-#     return render_page (request,title,text)
 
 
 def bible(request):
