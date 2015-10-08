@@ -16,6 +16,13 @@ from doc.asciidoc import asciidoc_html
 from django_project.settings import DOC_ROOT
 
 
+def random_select(request,topic):
+    '''Select content from a random file in the directory'''
+    path = '%s/Public/Spiritual-Things.org/%s'% (DOC_ROOT,topic)
+    select = choice(listdir(path))
+    return redirect(request,topic+'/'+select)
+
+
 def random_file(topic):
     '''Select content from a random file in the directory'''
     path = '%s/Public/Spiritual-Things.org/%s'% (DOC_ROOT,topic)
@@ -25,30 +32,38 @@ def random_file(topic):
     return '<h3>%s</h3><br><p>%s</p>' % (text,select)
 
 
+def random_line(topic):
+    path = '%s/Public/Spiritual-Things.org/%s'% (DOC_ROOT,topic)
+    # text = '<h3>%s</h3>' % choice(open(path).read().split('\n'))
+    # title = 'Reflection'
+    # return render_page (request,title,text)
+    return '<h3>%s</h3>' % choice(open(path).read().split('\n'))
+
+
+# def random_page(request, topic):
+#     text = random_file(request,topic)
+#     title = topic
+#     return render_page (request,title,text)
+
+
 def bible(request):
-    return random_page(request, 'bible')
+    return render_page (request, 'bible', random_file('bible'))
 
 def reflect(request):
-    return random_page(request, 'reflection')
+    return render_page (request, 'reflection', random_line('reflection/Questions'))
 
 def review(request):
-    return random_page(request, 'teaching')
+    return random_select(request, 'teaching')
 
 def prayers(request):
-    return random_page(request, 'prayers')
-
-
-def random_page(request, topic):
-    text = random_file(topic)
-    title = topic
-    return render_page (request,title,text)
+    return random_select(request, 'prayers')
 
 
 def asciidoc(request,title):
     '''Find and render to asciidoc content'''
     host = request.get_host()
     doc  = doc_path(host,'Public',title+'.asc')
-    text = doc + asciidoc_html(doc)
+    text = asciidoc_html(doc)
     site_title = domain_title(host)
     return render_page(request,title,text)
 

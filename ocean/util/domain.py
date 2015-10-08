@@ -46,15 +46,6 @@ domain_info = {
 }
 
 # Read the domain mapping from a file
-# def domain_map():
-#     map = {}
-#     for d in open(join(DOC_ROOT,'Domains')).read().split('\n'):
-#         d = d.split(' ')
-#         if len(d)>1:
-#             map[d[0]] = d[1]
-#     return map
-
-# Read the domain mapping from a file
 def domain_title(domain):
     if domain_info.has_key(domain):
         return domain_info[domain]['title']
@@ -62,9 +53,6 @@ def domain_title(domain):
 
 # Map the domain to a document directory
 def domain_directory(domain):
-    # m = domain_map()
-    # if m.has_key(domain) and m[domain]!='.':
-    #     return m[domain]
     if domain_info.has_key(domain):
         return domain_info[domain]['directory']
 
