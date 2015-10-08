@@ -96,6 +96,16 @@ def edit(request,title):
         return missing(request,"NOT ALLOWED TO EDIT -- "+title)
 
 
+
+# Render the view for a missing document
+def new(request,title):
+    text = 'Creating a new page,'+title
+    data = {'title':title, 'dir':dirname(title), 'text':text, 
+            'default':basename(title), 'newpage':'{{newpage}}'}
+    return render(request, 'new.html', data)
+
+
+
 # Render the add view
 def add(request,title):
     log_page (request,'add:%s'%title)

@@ -1,18 +1,13 @@
-# from datetime           import datetime
-# from django.contrib.auth.decorators import login_required
 from django.http        import HttpResponseRedirect, HttpResponse
-# from django.shortcuts   import render_to_response, get_object_or_404
 from django.template    import loader, Context
 from os import system, environ, listdir
-from os.path import join, exists  #, dirname
+from os.path import join, exists
 from random import choice
 
-#from models    import *
 from util.domain import domain_title
-from util.page import doc_path, show_page,  put_page, get_page, page_redirect #, allow_edit
+from util.page import doc_path, show_page,  put_page, get_page, page_redirect 
 from util.log  import append_log
 from doc.asciidoc import asciidoc_html
-#from django_project.settings import DOC_ROOT
 from util.tabs  import format_tabs, format_doc
 
 
@@ -73,14 +68,6 @@ def user_doc(request,title):
 # Log the page hit in page.log  (time, ip, user, page, doc) 
 def log_page(request,title): 
     append_log(request.get_host()+' '+user(request)+' '+title)
-
-
-# Render the view for a missing document
-def new(request,title):
-    text = 'Creating a new page,'+title
-    data = {'title':title, 'dir':dirname(title), 'text':text, 
-            'default':basename(title), 'newpage':'{{newpage}}'}
-    return render(request, 'new.html', data)
 
 
 # Render the view for a missing document
