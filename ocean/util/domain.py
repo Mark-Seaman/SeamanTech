@@ -49,12 +49,16 @@ domain_info = {
 def domain_title(domain):
     if domain_info.has_key(domain):
         return domain_info[domain]['title']
+    else:
+        return 'Local Host'
 
 
 # Map the domain to a document directory
 def domain_directory(domain):
     if domain_info.has_key(domain):
         return domain_info[domain]['directory']
+    else:
+        return ''
 
 
 # Convert a url to a directory
