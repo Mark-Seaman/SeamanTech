@@ -4,7 +4,13 @@ from os.path import join, exists, isdir
 from django_project.settings import DOC_ROOT
 from doc.views import render_page, redirect
 from util.log import append_log
-from util.tabs import format_doc
+from shell import shell
+
+
+def doc_html(topic):
+    '''Render the HTML for the doc content'''
+    path = join(DOC_ROOT,'Notes',topic)
+    return shell('text html '+path)
 
 
 def notes(request,title):
@@ -15,7 +21,8 @@ def notes(request,title):
         return redirect(request,join(path,'missing'))
     if isdir(path):
         return render_page(request, title, notes_directory(path,title))
-    return render_page(request,title,format_doc(path))
+    text = doc_html(path)
+    return render_page(request,title,text)
 
 
 def notes_directory(path,title):

@@ -19,7 +19,6 @@ def asciidoc(request,title):
     site_title = domain_title(host)
     return render_page(request,title,text)
 
-
 def doc(request,title):
     '''Render the appropriate doc view'''
     doc = user_doc(request,title)
