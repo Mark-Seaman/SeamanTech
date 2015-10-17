@@ -95,7 +95,7 @@ def url_to_anchor(url):
 def url_to_image(url):
     s = r"\[\[images/(([\w\#$%&~.\-;:=,?@\[\]+]*)(/[\w\#$%&~/.\-;:=,?@\[\]+]*)?)\]\]"
     pat = compile(s, IGNORECASE | DOTALL)
-    return pat.sub(r'<img src="/media/mybook/images/\1" alt="\1">', url)
+    return pat.sub(r'<img src="/static/images/\1" alt="\1" style="border: 1px solid green">', url)
 
 # Convert the Wiki Words to hyperlinks
 def wiki_words(text):

@@ -21,13 +21,18 @@ def asciidoc(request,title):
 
 def doc(request,title):
     '''Render the appropriate doc view'''
+
+    from notes import is_document, render_document_page
+    if is_document(request,title):
+        return render_document_page(request,title)
+        
     doc = user_doc(request,title)
     log_page (request, title)
     host = request.get_host()
     u = user(request)
     p = page_redirect(host,u,title)
     if p: 
-         return redirect(request,p)
+        return redirect(request,p)
     text = show_page(host,u,title,True)
     return render_page(request,title,text)
 
