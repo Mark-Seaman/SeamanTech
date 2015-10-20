@@ -16,23 +16,23 @@ domain_info = {
         'title': 'The Leverage Principle'
     },
     'spiritual-things.org': { 
-        'directory': 'Spiritual-Things.org', 
+        'directory': 'spiritual', 
         'title': 'Quiet Moments'
     },
     'seamanslog.com': {
-        'directory': 'SeamansLog.com',
+        'directory': 'seamanslog',
         'title': "Seaman's Log"
     },
     'mybookonline.org': {
-        'directory': 'mybookonline.org',
+        'directory': 'mybook',
         'title': 'mybookonline.org'
     },
     'exteriorbrain.com': {
-        'directory': 'Brain',
+        'directory': 'brain',
         'title': 'Exterior Brain'
     },
     'seaman-tech.com': {
-        'directory': 'seaman-tech.com',
+        'directory': 'tech',
         'title': 'Seaman Tech'
     },
     'markseaman.info': {

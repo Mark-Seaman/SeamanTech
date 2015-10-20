@@ -37,23 +37,6 @@ def doc(request,title):
     return render_page(request,title,text)
 
 
-def render_page(request,title,text):
-    '''Format the web page with content'''
-    site = domain_title(request.get_host())
-    content =  {
-        'site_title': site, 
-        'user': request.user, 
-        'title': site + '-' +title, 
-        'text': text
-    }
-    return render(request, 'doc.html', content)
-
-
-# Render a web page
-def render(request,template,data): 
-    page = loader.get_template (template)
-    return HttpResponse(page.render(Context(data)))
-
 # Name of requesting user
 def user(request):
     if not request.user.is_anonymous():
@@ -83,12 +66,12 @@ def missing(request,title):
     return render(request, 'missing.html', data)
 
 
-# Go to a specific page
-def redirect(request,title):
-    log_page (request,title)
-    return HttpResponseRedirect('/'+title) 
-
-
-# Render the home view
-def home(request):
-    return  doc(request,'Index')
+# Convert a url to a directory
+def doc_path(host,path):
+    user = user.replace('Anonymous', 'Public')
+    if dir: 
+        doc = user+'/'+dir+'/'+path
+    else:
+        doc = user+'/'+path
+    log_page('path '+doc)
+    return join(DOC_ROOT,doc)
