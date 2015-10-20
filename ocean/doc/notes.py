@@ -6,8 +6,8 @@ from random import choice
 from subprocess import Popen,PIPE
 
 from django_project.settings import DOC_ROOT
-from util.log import append_log
-from util.domain import domain_directory, domain_title
+from doc.log import append_log
+from doc.domain import domain_directory, domain_title
 
 
 def random_select(request, topic):
@@ -41,7 +41,7 @@ def render_page(request,title,text):
     '''Format the web page with content'''
     site = domain_title(request.get_host())
     content =  {
-        #'document': title,
+        #'document': domain_directory(request.get_host()) + '/' + site + '-' + title,
         'site_title': site, 
         'user': request.user, 
         'title': site + '-' + title, 
@@ -79,4 +79,6 @@ def doc(request,title):
 def home(request):
     '''Render the home view'''
     dir = domain_directory(request.get_host())
+    if dir=='seamanslog':
+        return random_select(request, 'seamanslog')
     return  redirect(request, dir+'/Index')
