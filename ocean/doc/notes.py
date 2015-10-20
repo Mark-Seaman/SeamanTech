@@ -31,8 +31,6 @@ def random_line(topic):
     return '<h3>%s</h3>' % choice(open(path).read().split('\n'))
 
 
-#----------------------------------------------------------------------
-
 def redirect(request,title):
     '''Go to a specific page'''
     append_log (join(request.get_host(), title))
@@ -43,8 +41,8 @@ def render_page(request,title,text):
     '''Format the web page with content'''
     site = domain_title(request.get_host())
     content =  {
+        #'document': title,
         'site_title': site, 
-        'document': title,
         'user': request.user, 
         'title': site + '-' + title, 
         'text': text
@@ -76,13 +74,6 @@ def doc(request,title):
     path = join(DOC_ROOT, title)
     text = render_doc_html(path)
     return render_page(request, title, text)
-
-
-# def notes_directory(path,title):
-#     '''Display the HTML text for the directory'''
-#     anchor = '<a href="/notes/%s/%s">%s</a>'
-#     files = [ anchor % (title, f, f) for f in listdir(path) ]
-#     return '<h1>%s</h1>' % title + '<br>'.join(files)
 
 
 def home(request):
