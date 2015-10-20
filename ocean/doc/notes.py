@@ -1,12 +1,9 @@
-from os import listdir
-from os.path import join, exists, isdir
-from subprocess import Popen,PIPE
-
 from django.http        import HttpResponseRedirect, HttpResponse
 from django.template    import loader, Context
 from os import system, environ, listdir
-from os.path import join, exists, dirname, basename
+from os.path import join, exists, isdir, dirname, basename
 from random import choice
+from subprocess import Popen,PIPE
 
 from django_project.settings import DOC_ROOT
 from util.log import append_log
@@ -73,20 +70,6 @@ def render_doc_html(path):
         return ("Path NOT found "+path)
 
 
-# def render_document_page (request,title):
-#     '''If the note is a directory or a file display it'''
-#     append_log (join(request.get_host(), title))
-#     path = join(DOC_ROOT, title)
-#     text = render_doc_html(path)
-#     return render_page(request,title,text)
-
-
-# def page(request, title, docdir):
-#     append_log (join(request.get_host(), docdir, title))
-#     path = join(DOC_ROOT, docdir, title)
-#     text = render_doc_html(path)
-#     return render_page(request, title, text)
-
 def doc(request,title):
     '''If the note is a directory or a file display it'''
     append_log (join(request.get_host(), title))
@@ -94,43 +77,12 @@ def doc(request,title):
     text = render_doc_html(path)
     return render_page(request, title, text)
 
- 
 
-# def seamanslog(request,title):
-#     '''If the note is a directory or a file display it'''
-#     if title=='Index':
-#         return random_select(request,'seamanslog')
-#     return page(request, title, 'seamanslog')
-
-# def brain(request,title):
-#     '''If the note is a directory or a file display it'''
-#     return page(request, title, 'brain')
-
-# def tech(request,title):
-#     '''If the note is a directory or a file display it'''
-#     return page(request, title, 'tech')
-
-
-# def spiritual(request,title):
-#     '''If the note is a directory or a file display it'''
-#     return page(request, title, 'spiritual')
-
-
-# def leverage(request,title):
-#     '''If the note is a directory or a file display it'''
-#     return page(request, title, 'Leverage')
-
-
-# def notes(request,title):
-#     '''If the note is a directory or a file display it'''
-#     return page(request, title, 'Notes')
-
-
-def notes_directory(path,title):
-    '''Display the HTML text for the directory'''
-    anchor = '<a href="/notes/%s/%s">%s</a>'
-    files = [ anchor % (title, f, f) for f in listdir(path) ]
-    return '<h1>%s</h1>' % title + '<br>'.join(files)
+# def notes_directory(path,title):
+#     '''Display the HTML text for the directory'''
+#     anchor = '<a href="/notes/%s/%s">%s</a>'
+#     files = [ anchor % (title, f, f) for f in listdir(path) ]
+#     return '<h1>%s</h1>' % title + '<br>'.join(files)
 
 
 def home(request):
