@@ -27,11 +27,11 @@ domain_info = {
     },
     'markseaman.info': {
         'directory': 'MarkSeaman.info',
-        'title': 'Mark Seaman.info'
+        'title': 'Markos de Seaman'
     },
     'markseaman.org': {
         'directory': 'MarkSeaman.org',
-        'title': 'Markos de Seaman'
+        'title': 'Mark Seaman'
     }
 }
 
