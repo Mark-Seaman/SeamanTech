@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% autoescape off %}
+        {% verbatim %}
+
+            <div ng-controller="HammerCtrl">
+                
+                <div ng-repeat='o in text'>
+                    <p>{{ o.name }} : {{ o.children }} </p>
+                    <ul ng-repeat="c in o.children">
+                        <li>{{ text[c].name }}</li>
+                    </ul>
+                </div> 
+
+            </div>
+        
+        {% endverbatim %}
+    {% endautoescape %}
+{% endblock %}
+
+
+{% block footer %}
+<center>
+  <img src="http:/static/images/SWS_Globe_small.jpg">
+  <br />
+  Powered by <b>Shrinking World Solutions</b>
+</center>
+{% endblock %}
+

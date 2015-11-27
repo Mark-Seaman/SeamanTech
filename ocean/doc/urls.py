@@ -16,6 +16,7 @@ urlpatterns = patterns(
     url(r'^review$',                        'doc.spiritual.review'),
 
     url(r'^notes/(?P<title>[\w\-_./]+)',    'doc.notes.notes'),
+    url(r'^thots$',                         'doc.notes.thots'),
     
     url(r'^(?P<title>[\w\-_./]+).asc$',     'doc.views.asciidoc'),
     url(r'^(?P<title>[\w\-_./]+)/new$',     'doc.views.new'),
