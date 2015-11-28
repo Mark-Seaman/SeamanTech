@@ -8,15 +8,12 @@ admin.autodiscover()
 urlpatterns = patterns(
     '',
 
-    url(r'^bible$',                         'doc.spiritual.bible'),
-    url(r'^prayers$',                       'doc.spiritual.prayers'),
-    url(r'^reflect$',                       'doc.spiritual.reflect'),
-    url(r'^review$',                        'doc.spiritual.review'),
+    url(r'bible$',     'doc.spiritual.bible'),
+    url(r'prayers$',   'doc.spiritual.prayers'),
+    url(r'reflect$',   'doc.spiritual.reflect'),
+    url(r'review$',    'doc.spiritual.review'),
 
-    url(r'^$',                              'doc.notes.home'),
-    url(r'^(?P<title>[\w\/\-_./]+)',        'doc.notes.doc'),
-    url(r'^notes/(?P<title>[\w\-_./]+)',    'doc.notes.notes'),
-    url(r'^thots$',                         'doc.notes.thots'),
-    url(r'^budget$',                        'doc.notes.budget'),
+    url(r'^$',         'doc.notes.home'),
+    url(r'^(?P<title>[\w\/\-_./]+)', 'doc.notes.doc'),
 
 )
