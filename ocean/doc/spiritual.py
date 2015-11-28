@@ -3,39 +3,20 @@ from os import listdir
 from os.path import join
 
 from django_project.settings import DOC_ROOT
-from doc.views import render_page, redirect
-
-
-def random_select(request,topic):
-    '''Select content from a random file in the directory'''
-    path = '%s/Public/Spiritual-Things.org/%s'% (DOC_ROOT,topic)
-    select = choice(listdir(path))
-    return redirect(request,topic+'/'+select)
-
-
-def random_file(topic):
-    '''Select content from a random file in the directory'''
-    path = '%s/Public/Spiritual-Things.org/%s'% (DOC_ROOT,topic)
-    select = choice(listdir(path))
-    path = join(path,select)
-    text = open(path).read()
-    return '<h3>%s</h3><br><p>%s</p>' % (text,select)
-
-
-def random_line(topic):
-    path = '%s/Public/Spiritual-Things.org/%s'% (DOC_ROOT,topic)
-    return '<h3>%s</h3>' % choice(open(path).read().split('\n'))
+from doc.notes import render_page, redirect, random_select, random_file, random_line
 
 
 def bible(request):
-    return render_page (request, 'bible', random_file('bible'))
+    text = random_file('spiritual/bible')
+    return render_page (request, 'bible', text)
 
 def reflect(request):
-    return render_page (request, 'reflection', random_line('reflection/Questions'))
+    text = random_line('spiritual/reflection/Questions')
+    return render_page (request, 'reflection', text)
 
 def review(request):
-    return random_select(request, 'teaching')
+    return random_select(request, 'spiritual/teaching')
 
 def prayers(request):
-    return random_select(request, 'prayers')
+    return random_select(request, 'spiritual/prayers')
 

@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: join(BASE_DIR, ...)
 from os.path import dirname, join
 BASE_DIR = dirname(dirname(__file__))
-DOC_ROOT    = join(BASE_DIR,'user_doc')
-
+DOC_ROOT = join(BASE_DIR,'user_doc')
+LOG_DIR  = join(dirname(BASE_DIR), 'logs')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/

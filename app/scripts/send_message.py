@@ -14,7 +14,7 @@ def preview_message(m):
 # Read the current message
 def read_message():
     print 'sent message'
-    f = '/home/seaman/Projects/thumper/app/data/send_message'
+    f = '/home/seaman/my_message'
     m = open(f).read().split('\n')
     preview_message(m)
     return m

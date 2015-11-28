@@ -5,7 +5,7 @@ from os.path import join,dirname
 from datetime import datetime
 
 from files import read_text,list_files
-from settings import LOG_DIR
+from django_project.settings import LOG_DIR
 
 
 # Setup the file name

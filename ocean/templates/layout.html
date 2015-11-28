@@ -44,6 +44,10 @@
     {% endblock %}
 
 
+    {% if document %}
+      <p> {{ document }} </p>
+    {% endif %}
+
     <div class="page">
       <div>
         {% block content %} 
