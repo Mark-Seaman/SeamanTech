@@ -20,6 +20,10 @@ def render_page(request,template,title,text):
     return HttpResponse(page.render(Context(content)))
 
 
+def budget(request):
+    return render_page(request, 'budget.html', 'Budget', 'text')
+
+
 def doc_html(topic):
     '''Render the HTML for the doc content'''
     path = join(DOC_ROOT,'Notes',topic)

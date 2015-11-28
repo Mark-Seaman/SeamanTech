@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% autoescape off %}
+
+        <div ng-controller="BudgetController">
+        {% verbatim %}
+
+            <h1>Church Budget - {{ name }}</h1>
+
+            Name <input type="text" ng-model="name">
+            
+            <table>
+                <tr>
+                    <td width="40%"> <h2>Income</h2></td><td>  <h2>100%  ${{ income }}</h2> </td>
+                </tr>
+                <tr>
+                    <td> Giving </td>
+                    <td> <input type="text" ng-model="giving" ng-change="income_change()"> </td>
+                </tr>
+                <tr>
+                    <td> Rent </td>
+                    <td> <input type="text" ng-model="rent" ng-change="income_change()"> </td>
+                </tr>
+                <tr>
+                    <td> <h2>Pastoral Staff </h2></td><td> <h2>45%  ${{ staff }}</h2> </td>
+                </tr>
+                <tr>
+                    <td> Todd </td>
+                    <td> <input type="text" ng-model="todd" ng-change="staff_change()"> </td>
+                </tr>
+                <tr>
+                    <td> Jenny </td>
+                    <td> <input type="text" ng-model="jenny" ng-change="staff_change()"> </td>
+                </tr>
+                <tr>
+                    <td> Other Staff</td>
+                    <td> <input type="text" ng-model="other_staff" ng-change="staff_change()"> </td>
+                </tr>
+               <tr>
+                    <td> Remaining </td>
+                    <td> {{ remaining_staff }} </td>
+                </tr>
+                <tr>
+                    <td><h2> Operations </h2></td><td> <h2>35%  ${{ operations }}</h2> </td>
+                </tr>
+                <tr>
+                    <td> Mortgage </td>
+                    <td> <input type="text" ng-model="mortgage" ng-change="operations_change()"> </td>
+                </tr>
+                <tr>
+                    <td> Utilities </td>
+                    <td> <input type="text" ng-model="utilities" ng-change="operations_change()"> </td>
+                </tr>
+                <tr>
+                    <td> Other </td>
+                    <td> <input type="text" ng-model="other_operations" ng-change="operations_change()"> </td>
+                </tr>
+                <tr>
+                    <td> Remaining </td>
+                    <td> {{ remaining_operations }} </td>
+                </tr>
+                <tr>
+                    <td> <h2> Outreach </h2></td><td> <h2>10%  ${{ outreach }}</h2></td>
+                </tr>
+                <tr>
+                    <td> AVC </td>
+                    <td> <input type="text" ng-model="avc" ng-change="outreach_change()"> </td>
+                </tr>
+                <tr>
+                    <td> Local </td>
+                    <td> <input type="text" ng-model="local" ng-change="outreach_change()"> </td>
+                </tr>
+                <tr>
+                    <td> Global </td>
+                    <td> <input type="text" ng-model="global" ng-change="outreach_change()"> </td>
+                </tr>
+                <tr>
+                    <td> Other </td>
+                    <td> <input type="text" ng-model="other_outreach" ng-change="outreach_change()"> </td>
+                </tr>
+                <tr>
+                    <td> Remaining </td>
+                    <td> {{ remaining_outreach }} </td>
+                </tr>
+                <tr>
+                    <td> <h2> Ministry </h2></td><td> <h2>10%  ${{ ministry }}</h2></td>
+                </tr>
+                <tr>
+                    <td> Kids & Youth </td>
+                    <td> <input type="text" ng-model="kids" ng-change="ministry_change()"> </td>
+                </tr>
+                <tr>
+                    <td> Sunday Service </td>
+                    <td> <input type="text" ng-model="sunday" ng-change="ministry_change()"> </td>
+                </tr>
+                <tr>
+                    <td> Remaining </td>
+                    <td> {{ remaining_ministry }} </td>
+                </tr>
+             
+            </table>
+
+
+        {% endverbatim %}
+        </div>
+
+    {% endautoescape %}
+{% endblock %}
+
+
+{% block footer %}
+<center>
+  <img src="http:/static/images/SWS_Globe_small.jpg">
+  <br />
+  Powered by <b>Shrinking World Solutions</b>
+</center>
+{% endblock %}
+
