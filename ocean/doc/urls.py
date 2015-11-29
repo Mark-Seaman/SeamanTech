@@ -13,7 +13,7 @@ urlpatterns = patterns(
     url(r'reflect$',   'doc.spiritual.reflect'),
     url(r'review$',    'doc.spiritual.review'),
 
-    url(r'^$',         'doc.notes.home'),
-    url(r'^(?P<title>[\w\/\-_./]+)', 'doc.notes.doc'),
-
+    url(r'^$',                          'doc.notes.home'),
+    url(r'^notes/Church/budgetcalc$',   'doc.notes.budget'),
+    url(r'^(?P<title>[\w\/\-_./]+)',    'doc.notes.doc'),
 )

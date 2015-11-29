@@ -10,6 +10,11 @@ from doc.log import append_log
 from doc.domain import domain_directory, domain_title
 
 
+def budget(request):
+    '''Check to see if the document exists'''
+    return render_page(request, 'budget.html', 'Budget', 'text')
+
+
 def random_select(request, topic):
     '''Select content from a random file in the directory'''
     path = join(DOC_ROOT, topic)
@@ -37,7 +42,7 @@ def redirect(request,title):
     return HttpResponseRedirect('/'+title) 
 
 
-def render_page(request,title,text):
+def render_page(request,template,title,text):
     '''Format the web page with content'''
     site = domain_title(request.get_host())
     content =  {
@@ -47,7 +52,7 @@ def render_page(request,title,text):
         'title': site + '-' + title, 
         'text': text
     }
-    page = loader.get_template ('doc.html')
+    page = loader.get_template (template)
     return HttpResponse(page.render(Context(content)))
 
 
@@ -73,7 +78,7 @@ def doc(request,title):
     append_log (join(request.get_host(), title))
     path = join(DOC_ROOT, title)
     text = render_doc_html(path)
-    return render_page(request, title, text)
+    return render_page(request, 'doc.html', title, text)
 
 
 def home(request):

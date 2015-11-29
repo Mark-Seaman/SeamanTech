@@ -7,28 +7,35 @@ function BudgetController($scope) {
     $scope.giving = 110000
     $scope.rent = 6000
 
-    $scope.todd = 26000
-    $scope.jenny = 26000
-    $scope.other_staff = 90
+    $scope.todd = 24600
+    $scope.jenny = 24600
+    $scope.other_staff = 6000
     
-    $scope.mortgage = 20000
-    $scope.utilities = 20000
-    $scope.other_operations = 90
+    $scope.mortgage = 15000
+    $scope.utilities = 14000
+    $scope.other_operations = 15000
      
-    $scope.avc = 1000
-    $scope.global = 9999
-    $scope.local = 9000
-    $scope.other_outreach = 9999
+    $scope.global = 1000
+    $scope.local = 3600
+    $scope.other_outreach = 0 
 
-    $scope.kids = 0
-    $scope.sunday =9
+    $scope.kids   = 2000
+    $scope.sunday = 3000
+    $scope.pastor = 2000
+    $scope.other_ministry  = 1100
+        
 
     $scope.income_change = function() {
-        $scope.income = parseInt($scope.giving) + parseInt($scope.rent)
-        $scope.staff = parseInt($scope.giving)*.45
-        $scope.operations = parseInt($scope.giving)*.35
-        $scope.outreach = parseInt($scope.giving)*.1
-        $scope.ministry = parseInt($scope.giving)*.1
+        $scope.income     = parseInt($scope.giving) + parseInt($scope.rent)
+        $scope.staff      = parseInt($scope.income)*.48
+        $scope.operations = parseInt($scope.income)*.38
+        $scope.outreach   = parseInt($scope.income)*.07
+        $scope.ministry   = parseInt($scope.income)*.07
+        $scope.avc = parseInt($scope.income)*.03
+        $scope.staff_change()
+        $scope.operations_change()
+        $scope.outreach_change()
+        $scope.ministry_change()
     }
     $scope.staff_change = function() {
         $scope.remaining_staff = parseInt($scope.staff) - parseInt($scope.other_staff) -
@@ -44,15 +51,10 @@ function BudgetController($scope) {
     }
     $scope.ministry_change = function() {
         $scope.remaining_ministry = $scope.ministry - parseInt($scope.kids) -
-             parseInt($scope.sunday)
+             parseInt($scope.sunday) - parseInt($scope.other_ministry) - parseInt($scope.pastor)
     }
 
     $scope.income_change()
-    $scope.staff_change()
-    $scope.operations_change()
-    $scope.outreach_change()
-    $scope.ministry_change()
-
 }
 
 var tabs = [
