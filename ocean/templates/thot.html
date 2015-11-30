@@ -2,16 +2,46 @@
 
 {% block content %}
     {% autoescape off %}
+
+        <h1>4 Thot</h1>
         {% verbatim %}
 
             <div ng-controller="HammerCtrl">
-                
-                <div ng-repeat='o in text'>
-                    <p>{{ o.name }} : {{ o.children }} </p>
-                    <ul ng-repeat="c in o.children">
-                        <li>{{ text[c].name }}</li>
-                    </ul>
-                </div> 
+
+                <accordion close-others="false">
+
+                    <accordion-group heading="Add">
+                        Name <input type='text' ng-model="name">
+                        Children <input type='text' ng-model="children">
+                        <button ng-click="add_record(name,children)">Add</button>
+
+                    </accordion-group>
+                    <accordion-group heading="List">
+                        
+                        <div ng-repeat='o in text'>
+                            <p>{{ o.name }} : 
+                            [ 
+                            <span ng-repeat="c in o.children">
+                                {{ text[c].name }},
+                            </span>
+                            ]</p>
+                        </div> 
+
+                    </accordion-group>
+                    <accordion-group heading="Data Get/Put">
+
+                        <h2>Get Thot</h2>
+                        <button ng-click="get_config_data()">Get Data</button>
+                        <p>data <pre>{{ gdata }}</pre></p>
+                        <p>status<pre>{{ gstatus }}</pre></p>
+
+                        <h2>Put Thot</h2>
+                        <button ng-click="put_config_data()">Put Data</button>
+                        <p>data <pre>{{ pdata }}</pre></p>
+                        <p>status<pre>{{ pstatus }}</pre></p>
+
+                    </accordion-group>
+                </accordion>
 
             </div>
         

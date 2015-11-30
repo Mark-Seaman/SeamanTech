@@ -64,15 +64,51 @@ var tabs = [
 ]
 
 
-function HammerCtrl($scope) {
-    $scope.text = [
-        {"name": "Mark Seaman",   "children": [1,2,3] },
-        {"name": "Stacie Seaman", "children": [3,4,5] },
-        {"name": "Mark Seaman",   "children": [1,2,3] },
-        {"name": "Stacie Seaman", "children": [3,4,5] },
-        {"name": "Mark Seaman",   "children": [1,2,3] },
-        {"name": "Stacie Seaman", "children": [3,4,5] }
-    ]
+function HammerCtrl($scope,$http) {
+
+    $scope.text = []
+    $scope.xname = 'New Name'
+    $scope.gstatus = 'no status'
+    $scope.gdata   = "no data"
+    $scope.pstatus = 'no status'
+    $scope.pdata   = "no data"
+
+    $scope.get_name = function () {
+        return $scope.xname
+    }
+
+    $scope.add_record = function (name,children) {
+        $scope.text.push({"name": name, "children": children})
+    }
+
+
+    $scope.get_config_data = function () {
+        $http.get('/get_thot')
+        .success(function(data,status,headers,config) {
+            $scope.gstatus = status
+            $scope.gdata = data
+            $scope.text = data  
+        })
+        .error (function(data,status,headers,config) { 
+            $scope.gstatus = status // 'Error: failed to get_thot'
+            $scope.gdata = data // "no data"
+        })            
+    }
+    //$scope.get_config_data()
+
+
+    $scope.put_config_data = function () {
+        $http.post ('/put_thot', $scope.text)
+            .success (function(data,status,headers,config) {
+                $scope.pstatus = status // "Success status"
+                $scope.pdata = data
+            })
+            .error (function(data,status,headers,config) { 
+                $scope.pstatus = status //'Error: failed to put_thot'
+                $scope.pdata = data //"no data"
+            }) 
+    }
+    //$scope.put_config_data($scope.text)
 }
 
 
