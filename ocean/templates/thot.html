@@ -11,15 +11,23 @@
                 <accordion close-others="false">
 
                     <accordion-group heading="Add">
-                        Name <input type='text' ng-model="name">
-                        Children <input type='text' ng-model="children">
-                        <button ng-click="add_record(name,children)">Add</button>
+                        <p>
+                            <span><label ng-model="id">ID: {{ id }}</label></span>
+                        </p>
+                        <p>
+                            Name <input type='text' ng-model="name">
+                            <button ng-click="add_record(name)">Add</button>
+                        </p>
+                        <p>
+                            Children <input type='text' ng-model="child">
+                            <button ng-click="add_child(name,child)">Add</button>
+                        </p>
 
                     </accordion-group>
                     <accordion-group heading="List">
                         
                         <div ng-repeat='o in text'>
-                            <p>{{ o.name }} : 
+                            <p>{{ o.id }} : {{ o.name }}
                             [ 
                             <span ng-repeat="c in o.children">
                                 {{ text[c].name }},

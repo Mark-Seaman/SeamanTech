@@ -66,8 +66,10 @@ var tabs = [
 
 function HammerCtrl($scope,$http) {
 
-    $scope.text = []
-    $scope.xname = 'New Name'
+    $scope.text    = []
+    $scope.id      = '42'
+    $scope.child   = '0'
+    $scope.xname   = 'New Name'
     $scope.gstatus = 'no status'
     $scope.gdata   = "no data"
     $scope.pstatus = 'no status'
@@ -77,8 +79,14 @@ function HammerCtrl($scope,$http) {
         return $scope.xname
     }
 
-    $scope.add_record = function (name,children) {
-        $scope.text.push({"name": name, "children": children})
+    $scope.add_record = function (name) {
+        var id = parseInt($scope.id)
+        $scope.text.push( {"id": id, "name": name, "children": ""} )
+        $scope.id = id+1
+    }
+
+    $scope.add_child = function (name,child) {
+        $scope.text.push({"name": name, "children": child})
     }
 
 
